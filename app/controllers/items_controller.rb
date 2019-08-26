@@ -14,7 +14,7 @@ class ItemsController < ApplicationController
     @markers = @items.map do |item|
       {
         lat: item.latitude,
-        lng: item.longitude,
+        lng: item.longitude
         # infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
         # image_url: helpers.asset_url('item.png')
       }

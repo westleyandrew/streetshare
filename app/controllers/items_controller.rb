@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   def update
     @item.update(item_params)
     redirect_to item_path(@item)
-    authorize @item
+    # authorize @item
   end
 
   def create
@@ -58,10 +58,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :photo, :address, :longitude, :latitude, :deposit, :categories_id)
+    params.require(:item).permit(:title, :description, :photo, :photo_cache, :address, :longitude, :latitude, :deposit, :categories_id)
   end
 
   def set_item
-    @item = item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end

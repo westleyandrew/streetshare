@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4">
+      <%= simple_form_for @item do |f| %>
+        <%= f.input :title %>
+        <%= f.input :description %>
+        <%= f.input :photo %>
+        <%= f.input :address %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

@@ -1,21 +1,24 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
 
   def index
     @items = Item.all
-
+    @items = Item.geocoded
     # @items = policy_scope(item)
     # @items = @items.search_by_title_and_model(params[:search]) if params[:search].present?
     # @items = item.geocoded #returns flats with coordinates
 
-    # @markers = @items.map do |item|
-    #   {
-    #     lat: item.latitude,
-    #     lng: item.longitude,
-    #     infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
-    #     image_url: helpers.asset_url('item.png')
-    #   }
-    # end
+    @markers = @items.map do |item|
+      {
+        lat: item.latitude,
+        lng: item.longitude,
+        # infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
+        # image_url: helpers.asset_url('item.png')
+      }
+    end
   end
 
   def show

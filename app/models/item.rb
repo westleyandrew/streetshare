@@ -1,4 +1,5 @@
 class Item < ApplicationRecord
-  belongs_to :users
-  belongs_to :categories
+  belongs_to :user
+  belongs_to :category
+  has_many :reviews, dependent: :destroy
 end

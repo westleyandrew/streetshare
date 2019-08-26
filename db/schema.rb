@@ -28,12 +28,12 @@ ActiveRecord::Schema.define(version: 2019_08_26_120541) do
     t.string "address"
     t.float "longitude"
     t.float "latitude"
-    t.bigint "users_id"
-    t.bigint "categories_id"
+    t.bigint "user_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["categories_id"], name: "index_items_on_categories_id"
-    t.index ["users_id"], name: "index_items_on_users_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 2019_08_26_120541) do
     t.text "body"
     t.datetime "date"
     t.integer "rating"
-    t.bigint "items_id"
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["items_id"], name: "index_reviews_on_items_id"
+    t.index ["item_id"], name: "index_reviews_on_item_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_120541) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "items", "categories", column: "categories_id"
-  add_foreign_key "items", "users", column: "users_id"
-  add_foreign_key "reviews", "items", column: "items_id"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
+  add_foreign_key "reviews", "items"
 end

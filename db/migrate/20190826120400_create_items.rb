@@ -7,8 +7,8 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :address
       t.float :longitude
       t.float :latitude
-      t.references :users, foreign_key: true
-      t.references :categories, foreign_key: true
+      t.references :user, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

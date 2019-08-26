@@ -20,6 +20,7 @@ puts 'Creating users...'
 sam = User.create!(email: "sam@gmail.com",
                   password: "1")
 
+url = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5txocwhoqbrpp.jpg"
 puts 'Creating items...'
 item1 = Item.create!(title: 'Tent',
                      description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty.',
@@ -30,6 +31,8 @@ item1 = Item.create!(title: 'Tent',
                      user: sam,
                      category: tools,
                       )
+item1.remote_photo_url = url
+item1_id = item1.id
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',

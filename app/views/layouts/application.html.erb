@@ -3,17 +3,35 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>StreetShare</title>
+    <title>Street Share</title>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:600&display=swap" rel="stylesheet">
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
+    <div class="site">
+      <div class="header-navbar">
+        <% if @home %>
+          <%= render 'shared/header' %>
+        <% else %>
+          <%= render 'shared/navbar' %>
+        <% end %>
+      </div>
+      <%= render 'shared/flashes' %>
+      <div class="main-content">
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <%= render 'shared/footer' %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </div>
   </body>
 </html>

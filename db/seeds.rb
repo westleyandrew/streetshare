@@ -28,30 +28,39 @@ pets = Category.create!(name: 'pets')
 
 puts 'Creating users...'
 sam = User.create!(email: "sam@gmail.com",
-                  password: "1")
+                   address: '19 Henryson Road, London, SE4 1HL',
+                   password: "1")
 
 ben = User.create!(email: "ben@gmail.com",
+                  address: '408 Brockley Rd, Brockley, London SE4 2DH',
                   password: "1")
 
 wes = User.create!(email: "wes@gmail.com",
+                  address: '80 Ladywell Rd, Ladywell, London SE13 7HS',
                   password: "1")
 
 dan = User.create!(email: "dan@gmail.com",
+                  address: '7 Rushford Road, London',
                   password: "1")
 
 jof = User.create!(email: "jof@gmail.com",
+                  address: '20 Amyruth Road, London',
                   password: "1")
 
 hugo = User.create!(email: "hugo@gmail.com",
+                  address: '122 Brockley Rise London',
                   password: "1")
 
 fred = User.create!(email: "fred@gmail.com",
+                  address: '17 Algernon Road, London',
                   password: "1")
 
 jeff = User.create!(email: "jeff@gmail.com",
+                  address: '108 Codrington Hill London',
                   password: "1")
 
 harry = User.create!(email: "harry@gmail.com",
+                    address: 'Ivy Road, Brockley, London',
                   password: "1")
 
 url1 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5txocwhoqbrpp.jpg"
@@ -59,7 +68,6 @@ puts 'Creating items...'
 item1 = Item.create!(title: 'Tent',
                      description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty.',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
                      user: sam,
                      category: travel,
                       )
@@ -70,7 +78,6 @@ url2 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5tx
 item2 = Item.create!(title: 'Tent',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
                      user: sam,
                      category: tools,
                       )
@@ -81,7 +88,6 @@ url3 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5tx
 item3 = Item.create!(title: 'Tent',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
                      user: sam,
                      category: tools,
                       )
@@ -92,8 +98,7 @@ url4 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5tx
 item4 = Item.create!(title: 'Tent',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
-                     user: sam,
+                     user: ben,
                      category: tools,
                       )
 item4.remote_photo_url = url4
@@ -103,8 +108,7 @@ url5 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5tx
 item5 = Item.create!(title: 'Tent',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
-                     user: sam,
+                     user: ben,
                      category: tools,
                       )
 item5.remote_photo_url = url5
@@ -114,8 +118,7 @@ url6 = "https://res.cloudinary.com/dxdxz4ttg/image/upload/v1566837904/witdffu5tx
 item6 = Item.create!(title: 'Tent',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
                      photo: 'https://www.borroclub.co.uk/wp-content/uploads/bfi_thumb/Montana_61-33vw0x41cgi5pxef8qa4ne.jpg',
-                     address: '19 Henryson Road, London',
-                     user: sam,
+                     user: ben,
                      category: tools,
                       )
 item6.remote_photo_url = url6

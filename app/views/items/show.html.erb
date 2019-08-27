@@ -1,1 +1,11 @@
-<%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %>
+<h1>Item Show Page</h1>
+<h2><%= @item.title %></h2>
+<p><%= @item.description %></p>
+<p><%= cl_image_tag @item.photo, height: 300, width: 400, crop: :fill %></p>
+
+
+<%= link_to "Edit item", edit_item_path %>
+    <%= link_to "Delete", item_path(@item),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<%= link_to "Back to items list index", items_path %></p>

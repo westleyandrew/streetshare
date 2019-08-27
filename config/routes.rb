@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :items do
     resources :reviews, only: [:new, :create]
   end
-  get 'pages/user', to: 'pages#user_show'
+  get 'pages/user', to: 'pages#user_show', as: :user_show
 
 end

@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
+    # @items = Item.all
     @users = User.geocoded
     @items = @users.map(&:items).flatten
     # @items = policy_scope(item)
@@ -13,7 +13,7 @@ class ItemsController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude
-        # infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
+        # infoWindow: render_to_string(partial: "info_window", locals: { item: item })
         # image_url: helpers.asset_url('item.png')
       }
     end

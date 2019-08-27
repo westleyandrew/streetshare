@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
+    @items = Item.all
     @users = User.geocoded
     @items = @users.map(&:items).flatten
     # @items = policy_scope(item)

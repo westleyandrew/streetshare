@@ -6,7 +6,7 @@ class PagesController < ApplicationController
 
   def user_show
     @user = current_user
-    # @items = Item.all
-    # @user_items = @items.find_by(user_id: current_user[:id])
+    @items = Item.all
+    @user_items = @items.where(user_id: current_user[:id])
   end
 end

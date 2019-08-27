@@ -2,20 +2,20 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all
-
+    @users = User.geocoded
+    @items = @users.map(&:items).flatten
     # @items = policy_scope(item)
     # @items = @items.search_by_title_and_model(params[:search]) if params[:search].present?
     # @items = item.geocoded #returns flats with coordinates
 
-    # @markers = @items.map do |item|
-    #   {
-    #     lat: item.latitude,
-    #     lng: item.longitude,
-    #     infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
-    #     image_url: helpers.asset_url('item.png')
-    #   }
-    # end
+    @markers = @users.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+        # infoWindow: render_to_string(partial: "info_window", locals: { item: item }),
+        # image_url: helpers.asset_url('item.png')
+      }
+    end
   end
 
   def show

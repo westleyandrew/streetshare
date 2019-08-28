@@ -58,8 +58,9 @@ harry = User.create!(email: "harry@gmail.com",
 url = "https://lifeundercanvas.co.uk/wp-content/uploads/2018/05/IMG_6821.jpg"
 puts 'Creating items...'
 item1 = Item.create!(title: 'Tent',
-                     description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty.',
+                     description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty. Deposit is £20',
                      user: sam,
+                     price: 20,
                      category: travel,
                       )
 item1.remote_photo_url = url
@@ -68,8 +69,9 @@ item1_id = item1.id
 
 url = "https://media.rs-online.com/t_large/F8296568-01.jpg"
 item2 = Item.create!(title: 'Toolkit',
-                     description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set',
+                     description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set. £25 Deposit',
                      user: sam,
+                     price: 25,
                      category: tools,
                       )
 item2.remote_photo_url = url
@@ -79,8 +81,9 @@ item2_id = item2.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/8110dlQ6L6L._SL1500_.jpg"
 item3 = Item.create!(title: 'Camping cart',
-                     description: 'VonHaus Folding Camping Cart with Lining - 4 Wheeled Collapsible Festival Trolley, Portable Garden & DIY Waste Wagon – 70KG Capacity',
+                     description: 'VonHaus Folding Camping Cart with Lining - 4 Wheeled Collapsible Festival Trolley, Portable Garden & DIY Waste Wagon – 70KG Capacity. £30 Deposit',
                      user: sam,
+                     price: 30,
                      category: travel,
                       )
 item3.remote_photo_url = url
@@ -120,8 +123,9 @@ item6_id = item6.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/81fHVelnRhL._SL1500_.jpg"
 item7 = Item.create!(title: 'Lawnmower available to borrow',
-                     description: 'TFlymo Speedi-Mo 360C Electric Wheeled Lawn Mower, 1500 W, Cutting Width 36 cm',
+                     description: 'TFlymo Speedi-Mo 360C Electric Wheeled Lawn Mower, 1500 W, Cutting Width 36 cm. £50 deposit',
                      user: wes,
+                     price: 50,
                      category: garden,
                       )
 item7.remote_photo_url = url
@@ -162,8 +166,9 @@ item10_id = item10.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/41ZWZ795YML.jpg"
 item11 = Item.create!(title: 'Gamaboy Advance with games available to borrow',
-                     description: 'Nintendo Clear Blue Console',
+                     description: 'Nintendo Clear Blue Console. £15 deposit.',
                      user: hugo,
+                     price: 15,
                      category: electronics,
                       )
 item11.remote_photo_url = url
@@ -192,12 +197,62 @@ item13.remote_photo_url = url
 item13.save
 item13_id = item13.id
 
+url = "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201809/180919_For_Website_newsletter__2_.png?6zHXseCaCKKUVG0BLhJr6fVnE.21q4Ux"
+item14 = Item.create!(title: 'Selection of books - free to collect',
+                     description: 'Great selection of books I need to get rid of to make some space. You can see the titles in the photo',
+                     user: jof,
+                     category: books,
+                      )
+item14.remote_photo_url = url
+item14.save
+item14_id = item14.id
+
+url = "https://bookriot.com/wp-content/uploads/2019/06/comics-feature-640x340-2.jpg"
+item15 = Item.create!(title: 'Selection of comics - free to collect',
+                     description: 'Getting rid of my sons comics. Free collect or they will go in the bin!!!',
+                     user: fred,
+                     category: books,
+                      )
+item15.remote_photo_url = url
+item15.save
+item15_id = item15.id
+
+url = "http://ironoctopusfitness.com/wp-content/uploads/2017/07/converse.jpg"
+item16 = Item.create!(title: 'Old pair of trainers - free to collect',
+                     description: 'Well worn but still have some life in them. Size 5.',
+                     user: harry,
+                     category: clothing,
+                      )
+item16.remote_photo_url = url
+item16.save
+item16_id = item16.id
+
+
+url = "http://ironoctopusfitness.com/wp-content/uploads/2017/07/converse.jpg"
+item17 = Item.create!(title: 'Old pair of trainers - free to collect',
+                     description: 'Well worn converse but still have some life in them. Size 5.',
+                     user: harry,
+                     category: clothing,
+                      )
+item17.remote_photo_url = url
+item17.save
+item17_id = item17.id
+
+url = "https://www.oldbootsofas.com/images/products/zoom/1406808166-22760200.jpg"
+item18 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item18.remote_photo_url = url
+item18.save
+item18_id = item18.id
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',
                 body: 'What a great find this tent is! Slept 8 teenage boys the size of large adults. Fab you can stand up in it. Easy peasy to assemble- we followed you tube! Highly recommend this!',
                 rating: 5,
-                date: DateTime.strptime("09/01/2009 19:00", "%m/%d/%Y %H:%M"),
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item1
                 )
 

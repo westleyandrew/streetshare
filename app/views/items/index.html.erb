@@ -1,19 +1,19 @@
-<div class= "page-grid">
+<!-- <div class= "page-grid">
   <div class="card-grid">
-    <% @items.each do |item| %>
+    <%# @items.each do |item| %>
       <div class="cards">
         <figure>
-          <%= cl_image_tag item.photo %>
+          <%#= cl_image_tag item.photo %>
         </figure>
               <div class="card-product-infos">
-                <h5 class="title-index"><%= link_to item.title, item_path(item) %></h5>
-                <%= item.description %>
+                <h5 class="title-index"><%#= link_to item.title, item_path(item) %></h5>
+                <%#= item.description %>
         </div>
       </div>
-    <% end %>
+    <%# end %>
   </div>
-</div>
-
+</div> -->
+<%= render "shared/grid-cards" %>
   <div
     id="map"
     style="width: 100%;

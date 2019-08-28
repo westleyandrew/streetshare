@@ -1,9 +1,9 @@
 <h1>User view </h1>
-<p>id = <%= @user.id %></p>
-<p>email = <%= @user.email %></p>
-<ul>
-  <% @user_items.each do |item| %>
-    <li class="item-li"><%= link_to item.title, item_path(item) %> - <%= item.user_id %>
+<h3>Hi <%= @user.email %> (id: <%= @user.id %>)</h3>
+<% @user_items.each do |item| %>
+  <%= link_to item_path(item), :action => 'go' do %>
+    <div class="item-li">
+      <%= render partial: "shared/card", object: item %>
       <span>
         <button type="button" class="btn btn-info btn-sm item-btn">
           <%= link_to "Edit item", edit_item_path(item) %>
@@ -12,7 +12,8 @@
           <%= link_to "Delete", item_path(item),
           method: :delete,
           data: { confirm: "Are you sure?" } %>
-        </button></span>
-    </li>
+        </button>
+      </span>
+    </div>
   <% end %>
-</ul>
+<% end %>

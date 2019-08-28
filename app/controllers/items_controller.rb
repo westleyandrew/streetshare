@@ -40,7 +40,7 @@ class ItemsController < ApplicationController
 
   def show
     @order = Order.new
-    # @review = Review.new
+    @review = Review.new
     # authorize @item
   end
 

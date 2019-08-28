@@ -17,3 +17,40 @@
       data: { confirm: "Are you sure?" } %>
 <%= link_to "Back to items list index", items_path %></p>
 
+<div class="container" id="item-review-list">
+  <h2 class ="h1_text_pages">Reviews & Comments</h2>
+    <% @item.reviews.each do |review| %>
+      <div class="review-title">
+        <div class="review-title">
+          <%= review.title %>
+        </div>
+      </div>
+      <div class="review-container">
+        <div class="review-rating">
+          <%= review.rating %>
+        </div>
+        <div class="review-body">
+          "<%= review.body %>"
+        </div>
+      </div>
+    <% end %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4 h1_text_pages">
+
+      <h1>Add a review</h1>
+
+      <%= simple_form_for [@item, @review], remote: true do |f| %>
+        <%= f.input :title %>
+        <%= f.input :body %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Submit review" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+  var newReview = '<div class="review-container"> <div class="review-title"> <%= @review.title %></div> <div class="review-rating"> <%= @review.rating %></div> <div class="review-body"> "<%= @review.body %>"</div></div>'
+  var reviews = document.querySelector('#item-review-list')
+  reviews.insertAdjacentHTML('beforeend', newReview)
+
+  var inputBox = document.querySelector('.review-title')
+  inputBox.value = '';
+
+  var inputBox = document.querySelector('.review-rating')
+  inputBox.value = '';
+
+  var inputBox = document.querySelector('.review-body')
+  inputBox.value = '';

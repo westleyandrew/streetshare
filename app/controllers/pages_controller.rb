@@ -10,5 +10,7 @@ class PagesController < ApplicationController
     @user = current_user
     @items = Item.all
     @user_items = @items.where(user_id: current_user[:id])
+    @orders = Order.all
+    @user_orders = @orders.where(user_id: current_user[:id])
   end
 end

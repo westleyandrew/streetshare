@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h2>Last items added:</h2>
+<%= render "shared/grid-cards" %>
+  <div class="buttom-button">
+<%= link_to "See all items", "#", class: "btn btn-gradient" %>
+  </div>

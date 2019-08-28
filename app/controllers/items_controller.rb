@@ -2,22 +2,28 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.search_by_title_address(params[:search][:query]) if params[:search][:query].present?
+    if params[:search][:query].present? && params[:search][:location].present?
 
-    @users = User.near(params[:search][:location]).to_a
-    # @items = @users.map(&:items).flatten
-    @items = @items.where(user: @users)
-    # @items = policy_scope(item)
-    # @items = @items.search_by_title_and_model(params[:search]) if params[:search].present?
-    # @items = item.geocoded #returns flats with coordinates
+      @items = Item.search_by_title_address(params[:search][:query])
 
-    @markers = @items.map do |item|
-      {
-        lat: item.user.latitude,
-        lng: item.user.longitude,
-        infoWindow: render_to_string(partial: "map_box", locals: { user: item.user })
-        # image_url: helpers.asset_url('item.png')
-      }
+      @users = User.near(params[:search][:location]).to_a
+      # @items = @users.map(&:items).flatten
+      @items = @items.where(user: @users)
+      # @items = policy_scope(item)
+      # @items = @items.search_by_title_and_model(params[:search]) if params[:search].present?
+      # @items = item.geocoded #returns flats with coordinates
+
+      @markers = @items.map do |item|
+        {
+          lat: item.user.latitude,
+          lng: item.user.longitude,
+          infoWindow: render_to_string(partial: "map_box", locals: { user: item.user })
+          # image_url: helpers.asset_url('item.png')
+        }
+      end
+    else
+      flash[:notice] = 'Please fill all the fields'
+      redirect_to root_path
     end
   end
 

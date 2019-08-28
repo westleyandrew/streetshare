@@ -4,6 +4,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import 'sweetalert2/dist/sweetalert2.min.css'
 
 import "../plugins/flatpickr"
 
@@ -13,11 +14,4 @@ initAutocomplete();
 
 initMapbox();
 
-initSweetalert('#sweet-alert-demo', {
-  title: "Congratulations!",
-  text: "We've sent you an email with the confirmation.",
-  icon: "success"
-}, (value) => {
-  const form = document.querySelector("#new_booking");
-  form.submit();
-});
+initSweetalert();

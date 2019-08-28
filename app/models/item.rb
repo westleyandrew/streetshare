@@ -6,6 +6,7 @@ class Item < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :title, presence: true
   validates :description, presence: true
+  has_many :orders, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_title_address,

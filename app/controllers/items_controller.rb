@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.search_by_title(params[:search][:query]) if params[:search][:query].present?
+    @items = Item.search_by_title_address(params[:search][:query]) if params[:search][:query].present?
 
     # @users = User.geocoded
     # @items = @users.map(&:items).flatten

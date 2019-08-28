@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 offset-sm-4 h1_text_pages">
+
+      <h1>Add a review</h1>
+
+      <%= simple_form_for [@item, @review], remote: true do |f| %>
+        <%= f.input :title %>
+        <%= f.input :body %>
+        <p>Rating</p>
+        <%= f.select :rating, [['Fabulous', 5],['Pretty neat', 4],['Definition of average', 3],['Poor (sad face)', 2],['Appalling',1,]] %>
+        <p></p>
+        <%= f.submit "Submit review" %>
+      <% end %>
+
+    </div>
+  </div>
+</div>

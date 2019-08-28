@@ -3,7 +3,7 @@
     <% @items.each do |item| %>
       <div class="cards">
         <figure>
-          <img class="card-image" src="<%= item.photo %>" alt="">
+          <%= cl_image_tag item.photo %>
         </figure>
               <div class="card-product-infos">
                 <h5 class="title-index"><%= link_to item.title, item_path(item) %></h5>

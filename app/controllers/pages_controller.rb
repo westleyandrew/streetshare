@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @home = true
+    @items = Item.first(8)
   end
 
   def user_show

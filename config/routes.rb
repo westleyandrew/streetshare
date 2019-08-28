@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :orders, only: [:show, :create]
+
   get 'pages/user', to: 'pages#user_show', as: :user_show
 
 end

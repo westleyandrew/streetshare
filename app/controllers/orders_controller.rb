@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def create
-    item = Item.find(params[:item_id])
-    order = Order.create!(item_id: item.id, amount: item.price, state: 'pending', user: current_user)
+    item = Item.find(params[:order][:item_id])
+    order = Order.create!(item_id: item.id, amount: item.price, state: 'pending', user: current_user, start_time: params[:order][:start_time], end_time: params[:order][:end_time])
 
     redirect_to order_path(order)
   end

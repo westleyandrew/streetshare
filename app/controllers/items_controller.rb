@@ -2,7 +2,18 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:search][:query].present? && params[:search][:location].present?
+    if params[:search].nil?
+      @items = Item.all
+      @users = User.all
+      @items = @items.where(user: @users)
+      @markers = @items.map do |item|
+        {
+          lat: item.user.latitude,
+          lng: item.user.longitude,
+          infoWindow: render_to_string(partial: "map_box", locals: { user: item.user })
+        }
+      end
+    elsif params[:search][:query].present? && params[:search][:location].present?
 
       @items = Item.search_by_title_address(params[:search][:query])
 

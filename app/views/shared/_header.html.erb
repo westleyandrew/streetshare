@@ -1,6 +1,13 @@
 <div class="banner-navbar">
   <%= image_tag 'logo3.jpg', class: "logo-bordered" %>
-  <%= image_tag "https://kitt.lewagon.com/placeholder/users/sarahlafer", class: "avatar-bordered", alt: "avatar-bordered" %>
+   <div>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+    <% else %>
+     <%= link_to "Sign in", new_user_session_path %>
+     <%= link_to "Sign up", new_user_registration_path %>
+    <% end %>
+  </div>
 </div>
 <div class="banner">
   <div class="container header-container">

@@ -2,9 +2,11 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('homepage2.jpg');
+  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), asset-url('homepage2.jpg');
   max-width: 100%;
-  height: 600px;
+  display: flex;
+  align-items: center;
+  height: 100vh;
   width: 100%;
 }
 
@@ -35,6 +37,15 @@
   position: relative;
   width: 80%;
   margin: 0 auto;
+  display: flex;
+}
+
+.search-btn {
+  margin-left: 10px;
+}
+
+.algolia-places {
+  width: 40%;
 }
 
 .header-container {

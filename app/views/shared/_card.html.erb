@@ -2,15 +2,16 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
     <!-- if card is an item card -->
-    <% if local_assigns[:item_div] %>
-      <h2><%= card.title %></h2>
-      <p><%= card.description %></p>
-      <p>user: <%= card.user_id %> (remove for prod)</p>
+    <% unless order_div %>
+      <h2><%= item.title %></h2>
+      <p><%= item.description %></p>
+      <p>user: <%= item.user_id %> (remove for prod)</p>
     <!-- if card is an order card -->
-    <% elsif local_assigns[:order_div] %>
-      <h2>Item: <%= card.item_id %></h2>
-      <p>Status: <%= card.state %></p>
-      <p>Amount: <%= humanized_money_with_symbol(card.amount) %></p>
+    <% else %>
+      <h2>Item: <%= order.item_id %></h2>
+      <p>User: <%= user.email %></p>
+      <p>Status: <%= order.state %></p>
+      <p>Amount: <%= humanized_money_with_symbol(order.amount) %></p>
     <% end %>
   </div>
 </div>

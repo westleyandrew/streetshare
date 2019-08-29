@@ -275,6 +275,123 @@ item18.remote_photo_url = url
 item18.save
 item18_id = item18.id
 
+item19 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item19.remote_photo_url = url
+item19.save
+item19_id = item19.id
+
+item20 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item20.remote_photo_url = url
+item20.save
+item20_id = item20.id
+
+item21 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item21.remote_photo_url = url
+item21.save
+item21_id = item21.id
+
+item22 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item22.remote_photo_url = url
+item22.save
+item22_id = item22.id
+
+item23 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item23.remote_photo_url = url
+item23.save
+item23_id = item23.id
+
+item24 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item24.remote_photo_url = url
+item24.save
+item24_id = item24.id
+
+item26 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item26.remote_photo_url = url
+item26.save
+item26_id = item26.id
+
+item27 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item27.remote_photo_url = url
+item27.save
+item27_id = item27.id
+
+item28 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item28.remote_photo_url = url
+item28.save
+item28_id = item28.id
+
+item29 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item29.remote_photo_url = url
+item29.save
+item29_id = item29.id
+
+item30 = Item.create!(title: 'Old sofa - free to collect',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item30.remote_photo_url = url
+item30.save
+item30_id = item30.id
+
+item31 = Item.create!(title: 'Old sofa 30 HURAAAAA',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item31.remote_photo_url = url
+item31.save
+item31_id = item31.id
+
+item32 = Item.create!(title: 'Old sofa 31 HURAAAAA',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: jeff,
+                     category: furniture,
+                      )
+item32.remote_photo_url = url
+item32.save
+item32_id = item32.id
+
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',
                 body: 'What a great find this tent is! Slept 8 teenage boys the size of large adults. Fab you can stand up in it. Easy peasy to assemble- we followed you tube! Highly recommend this!',

@@ -3,9 +3,10 @@ class ItemsController < ApplicationController
 
   def index
     if params[:search].nil?
-      @items = Item.all
+      #@Items = @items_paginator.group_by { |r| r.created_at.to_date }
       @users = User.all
-      @items = @items.where(user: @users)
+      @items = Item.where(user: @users)
+      @items_paginator = @items.paginate(page: params[:page], per_page: 5).order(created_at: :desc)
       @markers = @items.map do |item|
         {
           lat: item.user.latitude,

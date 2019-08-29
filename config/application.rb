@@ -11,6 +11,7 @@ module Streetshare
     config.generators do |generate|
           generate.assets false
           generate.helper false
+          generate.action_view.embed_authenticity_token_in_remote_forms true
           generate.test_framework  :test_unit, fixture: false
         end
     # Initialize configuration defaults for originally generated Rails version.

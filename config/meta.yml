@@ -1,5 +1,5 @@
 meta_product_name: "Streetshare"
 meta_title: "Streetshare - We help people save money"
 meta_description: "Streetshare"
-meta_image: "og.jpeg" # should exist in `app/assets/images/`
+meta_image: "og.jpg" # should exist in `app/assets/images/`
 twitter_account: "@street_twitter_account"   # required for Twitter Cards

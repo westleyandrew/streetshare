@@ -4,4 +4,11 @@
   <li>Status: <%= @order.state %></li>
   <li>Item: <%= @order.item_id %></li>
   <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
+  <%= link_to "Edit this order", edit_order_path %>
+  <br>
+  <%= link_to "Delete this order", order_path(@order),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      <br>
+      <%= link_to "Back to user home page", user_show_path %>
 <ul>

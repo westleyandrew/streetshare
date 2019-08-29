@@ -29,3 +29,13 @@
     </div>
   <% end %>
 <% end %>
+
+
+<%= month_calendar events: @user.orders do |date, orders| %>
+  <%= date %>
+    <% orders.each do |order| %>
+    <div>
+      <%= order.item.title %>
+    </div>
+  <% end %>
+<% end %>

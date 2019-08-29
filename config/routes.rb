@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :reviews, only: [:new, :create]
   end
-  resources :orders, only: [:show, :create]
+  resources :orders, only: [:show, :create, :edit, :update, :destroy]
 
   get 'pages/user', to: 'pages#user_show', as: :user_show
 

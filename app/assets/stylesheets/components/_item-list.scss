@@ -1,4 +1,11 @@
 
+a {
+  color: $dark-gray;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+}
 .item-container-booking {
   padding: 4%;
 }

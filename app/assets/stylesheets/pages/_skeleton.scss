@@ -20,11 +20,12 @@
   border-radius: 4px;
   font-weight: bold;
   background: #51C96C;
-  transition: background 0.3s ease;
+  transition: 0.3s;
   border: 1px solid #51C96C;
 }
 
 .btn-gradient:hover {
-  background: #51aec9;
+  //background: #51aec9;
   color: white;
+  opacity: 0.7;
 }

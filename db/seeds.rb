@@ -21,39 +21,66 @@ pets = Category.create!(name: 'pets')
 puts 'Creating users...'
 sam = User.create!(email: "sam@gmail.com",
                    address: '19 Henryson Road, London, SE4 1HL',
-                   password: "1")
+                   password: "1",
+                   first_name: "Sam",
+                   last_name: "Semit"
+                   )
 
 ben = User.create!(email: "ben@gmail.com",
                   address: '408 Brockley Rd, Brockley, London SE4 2DH',
-                  password: "1")
+                  password: "1",
+                  first_name: "Ben",
+                  last_name: "Mart"
+                   )
 
 wes = User.create!(email: "wes@gmail.com",
                   address: '80 Ladywell Rd, Ladywell, London SE13 7HS',
-                  password: "1")
+                  password: "1",
+                  first_name: "Wes",
+                  last_name: "Andrew"
+                   )
 
 dan = User.create!(email: "dan@gmail.com",
                   address: '7 Rushford Road, London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Dan",
+                  last_name: "Duppol"
+                  )
 
 jof = User.create!(email: "jof@gmail.com",
                   address: '20 Amyruth Road, London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Jof",
+                  last_name: "Bezos"
+                  )
 
 hugo = User.create!(email: "hugo@gmail.com",
                   address: '122 Brockley Rise London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Hugo",
+                  last_name: "Boss"
+                  )
 
 fred = User.create!(email: "fred@gmail.com",
                   address: '17 Algernon Road, London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Fred",
+                  last_name: "Martines"
+                  )
 
 jeff = User.create!(email: "jeff@gmail.com",
                   address: '108 Codrington Hill London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Jeff",
+                  last_name: "Smith"
+                  )
 
 harry = User.create!(email: "harry@gmail.com",
                     address: 'Ivy Road, Brockley, London',
-                  password: "1")
+                  password: "1",
+                  first_name: "Harry",
+                  last_name: "Potter"
+                  )
 
 url = "https://lifeundercanvas.co.uk/wp-content/uploads/2018/05/IMG_6821.jpg"
 puts 'Creating items...'
@@ -62,6 +89,7 @@ item1 = Item.create!(title: 'Tent',
                      user: sam,
                      price: 20,
                      category: travel,
+                     address: "138 Kingsland Road, London"
                       )
 item1.remote_photo_url = url
 item1.save
@@ -73,6 +101,7 @@ item2 = Item.create!(title: 'Toolkit',
                      user: sam,
                      price: 25,
                      category: tools,
+                     address: "Liverpool street station, London"
                       )
 item2.remote_photo_url = url
 item2.save

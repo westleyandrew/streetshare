@@ -96,6 +96,7 @@ item1 = Item.create!(title: 'Tent',
                      user: sam,
                      price: 20,
                      category: travel,
+                     address: "138 Kingsland Road, London"
                       )
 item1.remote_photo_url = url
 item1.save
@@ -107,6 +108,7 @@ item2 = Item.create!(title: 'Toolkit',
                      user: sam,
                      price: 25,
                      category: tools,
+                     address: "Liverpool street station, London"
                       )
 item2.remote_photo_url = url
 item2.save

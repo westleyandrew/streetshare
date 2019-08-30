@@ -1,34 +1,55 @@
 <h1>User view </h1>
 <h3>Hi <%= @user.email %> (id: <%= @user.id %>)</h3>
-<br />
-<h2 class="user-items">Your items:</h2>
-<% @user_items.each do |item| %>
-  <%= link_to item_path(item), :action => 'go' do %>
-    <div class="item-li">
-      <%= render partial: "shared/card", object: item, locals: {item_div: true} %>
-      <span>
-        <button type="button" class="btn btn-info btn-sm item-btn">
-          <%= link_to "Edit item", edit_item_path(item) %>
-        </button>
-        <button type="button" class="btn btn-danger btn-sm item-btn">
-          <%= link_to "Delete", item_path(item),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %>
-        </button>
-      </span>
-    </div>
-  <% end %>
-<% end %>
 
 <br />
-<h2 class="user-orders">Your orders:</h2>
-<% @user_orders.each do |order| %>
-  <%= link_to order_path(order), :action => 'go' do %>
-    <div class="item-li">
-      <%= render partial: "shared/card", object: order, locals: {order_div: true}  %>
-    </div>
+<h2 class="user-items">Your items:</h2>
+<%= render partial: "shared/plus_minus" %>
+<div class="hide user-item-container">
+  <% @user_items.each do |item| %>
+    <%= link_to item_path(item), :action => 'go' do %>
+      <div class="item-li">
+        <%#= render partial: "shared/card", object: item, locals: {item_div: true} %>
+        <%= render 'shared/card', item: item, order_div: false %>
+        <span>
+          <button type="button" class="btn btn-info btn-sm item-btn">
+            <%= link_to "Edit item", edit_item_path(item) %>
+          </button>
+          <button type="button" class="btn btn-danger btn-sm item-btn">
+            <%= link_to "Delete", item_path(item),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          </button>
+        </span>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
+
+<br />
+<h2 class="user-orders user-item-parent">Items you've ordered:</h2>
+<%= render partial: "shared/plus_minus" %>
+<div class="hide user-item-container">
+  <% @user_orders.each do |order| %>
+    <%= link_to order_path(order), :action => 'go' do %>
+      <div class="item-li">
+        <%= render 'shared/card', order: order, user: order.item.user, order_div: true %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+<br />
+<h2 class="user-orders user-item-parent">Items others have ordered from you:</h2>
+<%= render partial: "shared/plus_minus" %>
+<div class="hide user-item-container">
+  <% @my_orders.each do |order| %>
+    <%= link_to order_path(order), :action => 'go' do %>
+      <div class="item-li">
+        <%= render 'shared/card', order: order, user: order.user, order_div: true %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
 
 
 <%= month_calendar events: @user.orders do |date, orders| %>

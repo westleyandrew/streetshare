@@ -42,6 +42,13 @@ class ItemsController < ApplicationController
   def show
     @order = Order.new
     @review = Review.new
+    @item = Item.find(params[:id])
+    @markers = [ {
+          lat: @item.user.latitude,
+          lng: @item.user.longitude,
+          infoWindow: render_to_string(partial: "map_box", locals: { user: @item.user })
+          # image_url: helpers.asset_url('item.png')
+        }]
     # authorize @item
   end
 
@@ -80,7 +87,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :photo, :photo_cache, :address, :deposit, :category_id)
+    params.require(:item).permit(:title, :description, :photo, :photo_cache, :address, :price, :category_id)
   end
 
   def set_item

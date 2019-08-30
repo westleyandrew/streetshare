@@ -22,4 +22,14 @@ class Item < ApplicationRecord
     # def self.current_page
     #   1
     # end
+
+  def avg_rating
+    total = self.reviews.reduce(0) { |sum, review| sum + review.rating }
+    if self.reviews.count.positive?
+      return total / self.reviews.count
+    else
+      return 0
+    end
+  end
 end
+

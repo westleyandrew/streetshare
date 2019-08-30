@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
       #@Items = @items_paginator.group_by { |r| r.created_at.to_date }
       @users = User.all
       @items = Item.where(user: @users)
-      @items_paginator = @items.paginate(page: params[:page], per_page: 5).order(created_at: :desc)
-      @markers = @items.map do |item|
+      @items_paginator = @items.order(created_at: :desc).page params[:page]
+      @markers = @items_paginator.map do |item|
         {
           lat: item.user.latitude,
           lng: item.user.longitude,

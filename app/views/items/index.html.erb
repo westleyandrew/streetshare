@@ -13,7 +13,12 @@
     <%# end %>
   </div>
 </div> -->
-<%= render "shared/grid-cards" %>
+<%= paginate @items_paginator %>
+<div class="cards">
+  <% @items_paginator.each do |item| %>
+    <%= render "shared/grid-cards", item: item %>
+  <% end %>
+</div>
   <div
     id="map"
     style="width: 100%;

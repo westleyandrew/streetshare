@@ -14,12 +14,12 @@ class Item < ApplicationRecord
     using: {
       tsearch: { prefix: true } # <-- now `superman batm` will return something!
     }
+  paginates_per 12
+    # def self.total_pages
+    #   5
+    # end
 
-    def self.total_pages
-      5
-    end
-
-    def self.current_page
-      1
-    end
+    # def self.current_page
+    #   1
+    # end
 end

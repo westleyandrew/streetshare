@@ -1,16 +1,10 @@
-<%= will_paginate %>
-<div class="cards">
-  <% @items_paginator.each do |item| %>
-    <%= link_to item_path(item) do %>
-      <div class="card">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo %>')">
-        </div>
-        <div class="card-info">
-          <span><%= item.title %></span>
-          <span><%= item.address %></span>
-        </div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-<%#= will_paginate %>
+<%= link_to item_path(item) do %>
+  <div class="card">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item.photo %>')">
+    </div>
+    <div class="card-info">
+      <span><%= item.title %></span>
+      <span><%= item.address %></span>
+    </div>
+  </div>
+<% end %>

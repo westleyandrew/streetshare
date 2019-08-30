@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+# gem 'will_paginate',           '3.1.6'
+# gem 'bootstrap-will_paginate', '1.0.0'
+gem 'kaminari'
 gem "simple_calendar", "~> 2.0"
 gem 'geocoder'
 gem 'carrierwave', '~> 1.2'

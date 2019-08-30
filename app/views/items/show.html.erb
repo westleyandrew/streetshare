@@ -55,8 +55,10 @@
   ></div>
 
   <hr>
+  <br>
+
 <div class="container" id="item-review-list">
- <h2 class ="h1_text_pages">Reviews & Comments</h2>
+ <h3 class ="h1_text_pages">Reviews & Comments</h3>
    <% @item.reviews.each do |review| %>
      <div class="review-title">
        <div class="review-title">
@@ -67,16 +69,16 @@
        <div class="review-rating">
          <%= review.rating %>
        </div>
-       <div class="review-body">
+       <div class="review-body d-flex align-items-center">
          "<%= review.body %>"
        </div>
      </div>
    <% end %>
 </div>
-<div class="container-review">
+<div class="container container-review">
  <div class="row">
-   <div class="col-sm-4 offset-sm-4 h1_text_pages">
-     <h1>Add a review</h1>
+   <div class="col-sm-4 h1_text_pages">
+     <h4>Add a review</h4>
      <%= simple_form_for [@item, @review], remote: true do |f| %>
        <%= f.input :title %>
        <%= f.input :body %>
@@ -87,4 +89,5 @@
      <% end %>
    </div>
  </div>
+</div>
 </div>

@@ -1,5 +1,9 @@
 <h2>Recommended for you</h2>
-<%= render "shared/grid-cards" %>
-  <div class="buttom-button">
-<%= link_to "See all items", items_path, class: "btn btn-gradient" %>
-  </div>
+<div class="cards">
+  <% @items.each do |item| %>
+    <%= render "shared/grid-cards", item: item %>
+  <% end %>
+</div>
+<div class="buttom-button">
+  <%= link_to "See all items", items_path, class: "btn btn-gradient" %>
+</div>

@@ -6,7 +6,11 @@ class OrdersController < ApplicationController
     item = Item.find(params[:order][:item_id])
     order = Order.create!(item_id: item.id, amount: item.price, state: 'pending', user: current_user, start_time: params[:order][:start_time], end_time: params[:order][:end_time])
 
-    redirect_to order_path(order)
+    if order.save
+      redirect_to order_path(order)
+    else
+      render :new
+    end
   end
 
   def show

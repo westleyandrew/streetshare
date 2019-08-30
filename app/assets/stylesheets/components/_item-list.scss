@@ -6,6 +6,7 @@
 .row {
   display: flex;
   padding: 24px 0;
+  text-align: left;
 }
 
 .modal-header {
@@ -14,11 +15,11 @@
 
 .item-container-booking {
   text-align: center;
+  margin-left: 190px;
 }
 
 .photo-calendar {
   display: flex;
-
 }
 
 // .middle-container {
@@ -52,24 +53,40 @@
   display: inline-block;
 }
 
-.btn-gradient {
+input.btn-primary {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   font-weight: bold;
-  background: linear-gradient(#167FFB, #0F60C4);
+  background: linear-gradient($green, $green);
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  border: 1px solid $green;
   margin-bottom: 24px;
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
-  color: black;
+.btn-primary:hover {
+  background: green;
+  color: white;
 }
 
-.container-bottom {
+// .btn-gradient {
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 4px;
+//   font-weight: bold;
+//   background: linear-gradient(#167FFB, #0F60C4);
+//   transition: background 0.3s ease;
+//   border: 1px solid #0F60C4;
+//   margin-bottom: 24px;
+// }
 
+// .btn-gradient:hover {
+//   background: linear-gradient(#147EFF, #0F67DA);
+//   color: black;
+// }
+
+.container-review {
+  text-align: left;
 }
 
 .review-container {

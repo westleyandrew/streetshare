@@ -1,7 +1,7 @@
 <div class="container">
 <div class="item-container-top">
   <p><%= link_to "< Back to items list", items_path,class: "links_text_pages" %></p>
-  <h2 class="text-inline h1_text_pages"><%= @item.title %></h2>
+  <h3 class="text-inline h1_text_pages"><%= @item.title %></h3>
   <div class="top-info">
     <%= link_to "Edit item", edit_item_path %> |
     <%= link_to "Delete", item_path(@item),
@@ -26,7 +26,7 @@
           <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
           <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= submit_tag 'Reserve Item and pay deposit?', class: 'btn btn-primary' %>
+          <%= submit_tag 'Reserve item & pay deposit', class: 'btn btn-primary' %>
           <% end %>
         <% end %>
       </div>
@@ -51,6 +51,7 @@
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   ></div>
 
+  <hr>
 <div class="container" id="item-review-list">
  <h2 class ="h1_text_pages">Reviews & Comments</h2>
    <% @item.reviews.each do |review| %>
@@ -69,7 +70,7 @@
      </div>
    <% end %>
 </div>
-<div class="container">
+<div class="container-review">
  <div class="row">
    <div class="col-sm-4 offset-sm-4 h1_text_pages">
      <h1>Add a review</h1>

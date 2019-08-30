@@ -1,8 +1,6 @@
-<h1>User view </h1>
-<h3>Hi <%= @user.email %> (id: <%= @user.id %>)</h3>
-
+<h1>Hi <%= @user.first_name %></h1>
 <br />
-<h2 class="user-items">Your items:</h2>
+<h2 class="user-items">Here is a list of your items:</h2>
 <%= render partial: "shared/plus_minus" %>
 <div class="hide user-item-container">
   <% @user_items.each do |item| %>
@@ -26,7 +24,7 @@
 </div>
 
 <br />
-<h2 class="user-orders user-item-parent">Items you've ordered:</h2>
+<h2 class="user-orders user-item-parent">Here is the list of items you have requested or borrowed:</h2>
 <%= render partial: "shared/plus_minus" %>
 <div class="hide user-item-container">
   <% @user_orders.each do |order| %>
@@ -39,7 +37,7 @@
 </div>
 
 <br />
-<h2 class="user-orders user-item-parent">Items others have ordered from you:</h2>
+<h2 class="user-orders user-item-parent">Here is your current list of requested items. Please approve or reject these requests.</h2>
 <%= render partial: "shared/plus_minus" %>
 <div class="hide user-item-container">
   <% @my_orders.each do |order| %>

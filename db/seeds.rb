@@ -201,7 +201,7 @@ item10_id = item10.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/41ZWZ795YML.jpg"
-item11 = Item.create!(title: 'Gamaboy Advance with games available to borrow',
+item11 = Item.create!(title: 'Gameboy Advance with games available to borrow',
                      description: 'Nintendo Clear Blue Console. £15 deposit.',
                      user: hugo,
                      price: 15,

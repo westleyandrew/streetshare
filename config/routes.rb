@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   resources :items do
     resources :reviews, only: [:new, :create]
   end
-  resources :orders, only: [:show, :create, :edit, :update, :destroy]
+  resources :orders, only: [:show, :create, :edit, :update, :destroy] do
+    patch '/accept', to: 'orders#accept'
+    patch '/reject', to: 'orders#reject'
+  end
 
   get 'pages/user', to: 'pages#user_show', as: :user_show
 

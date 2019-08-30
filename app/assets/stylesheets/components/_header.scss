@@ -26,10 +26,11 @@
 }
 
 .logo-bordered {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  opacity: 0.8;
 }
 
 .search-form-control {

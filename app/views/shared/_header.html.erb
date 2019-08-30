@@ -2,10 +2,11 @@
   <%= image_tag 'logo237.png', class: "logo-bordered" %>
    <div>
     <% if user_signed_in? %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+      <%= link_to "Account", user_show_path, id: "colorwh" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, id: "colorwh" %>
     <% else %>
-     <%= link_to "Sign in", new_user_session_path %>
-     <%= link_to "Sign up", new_user_registration_path %>
+     <%= link_to "Sign in", new_user_session_path, id: "colorwh" %>
+     <%= link_to "Sign up", new_user_registration_path, id: "colorwh" %>
     <% end %>
   </div>
 </div>
@@ -26,4 +27,3 @@
 
   </div>
 </div>
-

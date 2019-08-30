@@ -23,12 +23,21 @@ class Item < ApplicationRecord
     #   1
     # end
 
+  def has_reviews?
+    Review.where(item: self).count > 0
+  end
+
   def avg_rating
-    total = self.reviews.reduce(0) { |sum, review| sum + review.rating }
-    if self.reviews.count.positive?
-      return total / self.reviews.count
+    # total = self.reviews.reduce(0) { |sum, review| sum + review.rating }
+    # if self.reviews.count.positive?
+    #   return total / self.reviews.count
+    # else
+    #   return 0
+    # end
+    if self.has_reviews?
+      Review.where(item: self).average(:rating).round()
     else
-      return 0
+      0
     end
   end
 end

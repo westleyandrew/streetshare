@@ -7,7 +7,7 @@
     <%= link_to item_path(item), :action => 'go' do %>
       <div class="item-li">
         <%#= render partial: "shared/card", object: item, locals: {item_div: true} %>
-        <%= render 'shared/card', item: item, order_div: false %>
+        <%= render 'shared/card', item: item, item_var: item, order_div: false %>
         <span>
           <button type="button" class="btn btn-info btn-sm item-btn">
             <%= link_to "Edit item", edit_item_path(item) %>
@@ -30,9 +30,9 @@
   <% @user_orders.each do |order| %>
     <%= link_to order_path(order), :action => 'go' do %>
       <div class="item-li">
-        <%= render 'shared/card', order: order, user: order.item.user, order_div: true %>
+        <%= render 'shared/card', order: order, user: order.item.user, item_var: order.item, order_div: true %>
       </div>
-    <% end %>, user: order.item.user,
+    <% end %>
   <% end %>
 </div>
 
@@ -43,7 +43,7 @@
   <% @my_orders.each do |order| %>
     <%= link_to order_path(order), :action => 'go' do %>
       <div class="item-li">
-        <%= render 'shared/card', order: order, user: order.user, order_div: true %>
+        <%= render 'shared/card', order: order, user: order.user, item_var: order.item, order_div: true %>
       </div>
     <% end %>
   <% end %>

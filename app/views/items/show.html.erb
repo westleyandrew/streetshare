@@ -16,17 +16,19 @@
       </button> -->
 
       <div>
-        <% if humanized_money(@item.price).to_i == 0 %>
-          <%= simple_form_for @order do |f| %>
+        <% unless @item.user == current_user %>
+          <% if humanized_money(@item.price).to_i == 0 %>
+            <%= simple_form_for @order do |f| %>
+              <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
+              <%= submit_tag 'Reserve Item with owner', class: 'btn btn-primary' %>
+            <% end %>
+          <% else %>
+            <%= simple_form_for @order do |f| %>
             <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
-            <%= submit_tag 'Reserve Item with owner', class: 'btn btn-primary' %>
-          <% end %>
-        <% else %>
-          <%= simple_form_for @order do |f| %>
-          <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
-          <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= submit_tag 'Reserve item & pay deposit', class: 'btn btn-primary' %>
+            <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= submit_tag 'Reserve item & pay deposit', class: 'btn btn-primary' %>
+            <% end %>
           <% end %>
         <% end %>
       </div>

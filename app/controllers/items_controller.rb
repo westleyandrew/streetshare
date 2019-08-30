@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
       #@Items = @items_paginator.group_by { |r| r.created_at.to_date }
       @users = User.all
       @items = Item.where(user: @users)
-      @items_paginator = @items.order(created_at: :desc).page params[:page]
+      @items_paginator = @items.order(created_at: :desc).page(params[:page])
       @markers = @items_paginator.map do |item|
         {
           lat: item.user.latitude,
@@ -16,11 +16,11 @@ class ItemsController < ApplicationController
       end
     elsif params[:search][:query].present? && params[:search][:location].present?
 
-      @items = Item.search_by_title_address(params[:search][:query])
+      @items_paginator = Item.search_by_title_address(params[:search][:query]).page(params[:page])
 
       @users = User.near(params[:search][:location]).to_a
       # @items = @users.map(&:items).flatten
-      @items = @items.where(user: @users)
+      @items = @items_paginator.where(user: @users)
       # @items = policy_scope(item)
       # @items = @items.search_by_title_and_model(params[:search]) if params[:search].present?
       # @items = item.geocoded #returns flats with coordinates

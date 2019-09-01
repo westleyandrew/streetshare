@@ -1,17 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 offset-sm-4">
-      <%= simple_form_for @order do |f| %>
-        <%= f.input :item_id %>
-        <%= f.input :amount %>
-        <p>Please accept or reject the request</p>
-        <%= f.select :state, [['Accepted', 'Accepted'],['Rejected', 'Rejected']] %>
-        <p></p>
-        <p>The order was made by User <%= @order.user_id %></p>
-        <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit %>
-      <% end %>
+    <div class="col-sm-6 offset-sm-3">
+        <div class="form-post">
+          <% item = Item.find(@order.item_id) %>
+          <% user = User.find(@order.user_id) %>
+          <%= simple_form_for @order do |f| %>
+            <p><%= item.title %></p>
+            <%= f.input :item_id %>
+            <%= f.input :amount %>
+            <p>Please accept or reject the request</p>
+            <%= f.select :state, [['Accepted', 'Accepted'],['Rejected', 'Rejected']] %>
+            <p></p>
+            <p>The order was made by <%= user.first_name %> <%= user.last_name %></p>
+            <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= f.button :submit, class: 'btn btn-primary' %>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>

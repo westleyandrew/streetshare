@@ -1,14 +1,26 @@
 <!-- app/views/orders/show.html.erb -->
-<h1>Order</h1>
-<ul>
-  <li>Status: <%= @order.state %></li>
-  <li>Item: <%= @order.item_id %></li>
-  <li>Amount: <%= humanized_money_with_symbol(@order.amount) %></li>
-  <%= link_to "Edit this order", edit_order_path %>
-  <br>
-  <%= link_to "Delete this order", order_path(@order),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-      <br>
-      <%= link_to "Back to user home page", user_show_path %>
-<ul>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+        <div class="form-post">
+          <h1>Order information</h1>
+          <ul style="list-style: none;">
+            <% item = Item.find(@order.item_id) %>
+            <% user = User.find(@order.user_id) %>
+            <li><p>Request status: <%= @order.state %></p></li>
+            <li><p>Item: <%= item.title %></p></li>
+            <li><p>Requested by <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)</p></li>
+            <li><p>Amount: <%= humanized_money_with_symbol(@order.amount) %></p></li>
+            <br>
+            <%= link_to "Edit this order", edit_order_path, class: 'btn btn-primary' %>
+            <br>
+            <%= link_to "Delete this order", order_path(@order),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
+                <br>
+                <%= link_to "Back to user home page", user_show_path, class: 'btn btn-primary' %>
+          <ul>
+      </div>
+    </div>
+  </div>
+</div>

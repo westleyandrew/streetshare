@@ -82,6 +82,18 @@ input.btn-primary {
   opacity: 0.7;
 }
 
+a.btn-primary {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $green;
+  transition: 0.3s;
+  border: 1px solid $green;
+  margin-bottom: 24px;
+}
+
+
 // .btn-gradient {
 //   color: white;
 //   padding: 8px 24px;

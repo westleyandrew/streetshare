@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:new, :create]
   end
   resources :orders, only: [:show, :create, :edit, :update, :destroy] do
+    resources :payments, only: [:new, :create]
     patch '/accept', to: 'orders#accept'
     patch '/reject', to: 'orders#reject'
   end

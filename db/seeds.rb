@@ -91,7 +91,7 @@ ali = User.create!(email: "ali@gmail.com",
 
 url = "https://lifeundercanvas.co.uk/wp-content/uploads/2018/05/IMG_6821.jpg"
 puts 'Creating items...'
-item1 = Item.create!(title: 'Tent',
+item1 = Item.create!(title: 'Tent - Borrow',
                      description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty. Deposit is £20',
                      user: sam,
                      price: 20,
@@ -103,7 +103,7 @@ item1.save
 item1_id = item1.id
 
 url = "https://media.rs-online.com/t_large/F8296568-01.jpg"
-item2 = Item.create!(title: 'Toolkit',
+item2 = Item.create!(title: 'Toolkit - Borrow',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set. £25 Deposit',
                      user: sam,
                      price: 25,
@@ -116,7 +116,7 @@ item2_id = item2.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/8110dlQ6L6L._SL1500_.jpg"
-item3 = Item.create!(title: 'Camping cart',
+item3 = Item.create!(title: 'Camping cart - Borrow',
                      description: 'VonHaus Folding Camping Cart with Lining - 4 Wheeled Collapsible Festival Trolley, Portable Garden & DIY Waste Wagon – 70KG Capacity. £30 Deposit',
                      user: sam,
                      price: 30,
@@ -128,7 +128,7 @@ item3_id = item3.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/61pCWdaFQJL._SX679_.jpg"
-item4 = Item.create!(title: 'Set of Drawers - Free to collect',
+item4 = Item.create!(title: 'Set of Drawers - Free',
                      description: 'Vida Designs Pine Chest of Drawers, 4 Drawer With Metal Handles and Runners, Unique Anti-Bowing Drawer Support, Riano Bedroom Furniture',
                      user: ben,
                      category: furniture,
@@ -137,8 +137,8 @@ item4.remote_photo_url = url
 item4.save
 item4_id = item4.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/71E0r3ZqjBL._SL1500_.jpg"
-item5 = Item.create!(title: 'Bar Chair Set - Free to collect',
+url = "https://images-na.ssl-images-amazon.com/images/I/71O3QnmG1zL._SL1500_.jpg"
+item5 = Item.create!(title: 'Bar Chair Set - Free',
                      description: 'SONGMICS Bar Stools Set of 2, Height Adjustable Bar Chairs in Synthetic Leather, 360° Swivel Kitchen Stool with Backrest and Footrest',
                      user: ben,
                      category: furniture,
@@ -148,7 +148,7 @@ item5.save
 item5_id = item5.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/51rUcCASRfL._SX392_BO1,204,203,200_.jpg"
-item6 = Item.create!(title: 'Childrens Encyclopedia - Free to Collect',
+item6 = Item.create!(title: 'Childrens Encyclopedia - Free',
                      description: 'The New Childrens Encyclopedia: Packed with Thousands of Facts, Stats, and Illustrations',
                      user: ben,
                      category: books,
@@ -157,9 +157,9 @@ item6.remote_photo_url = url
 item6.save
 item6_id = item6.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/81fHVelnRhL._SL1500_.jpg"
-item7 = Item.create!(title: 'Lawnmower available to borrow',
-                     description: 'TFlymo Speedi-Mo 360C Electric Wheeled Lawn Mower, 1500 W, Cutting Width 36 cm. £50 deposit',
+url = "https://upload.wikimedia.org/wikipedia/commons/9/90/MTD_Lawn_Mower.jpg"
+item7 = Item.create!(title: 'Lawnmower - Borrow',
+                     description: 'TFlymo Speedi-Mo 360C Petrol Lawn Mower, 1500 W, Cutting Width 36 cm. £50 deposit',
                      user: wes,
                      price: 50,
                      category: garden,
@@ -168,8 +168,8 @@ item7.remote_photo_url = url
 item7.save
 item7_id = item7.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/51xZhPXwtLL._SL1181_.jpg"
-item8 = Item.create!(title: 'Trusty spade available to borrow',
+url = "https://media.4rgos.it/i/Argos/6064363_R_Z001A?w=750&h=440&qlt=70"
+item8 = Item.create!(title: 'Spade - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
                      user: wes,
                      category: garden,
@@ -180,7 +180,7 @@ item8_id = item8.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/516HkK-UxEL.jpg"
-item9 = Item.create!(title: 'Deck chair available to borrow',
+item9 = Item.create!(title: 'Deck chair - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
                      user: hugo,
                      category: garden,
@@ -190,7 +190,7 @@ item9.save
 item9_id = item9.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/61gmnonBaKL._SL1000_.jpg"
-item10 = Item.create!(title: 'Television available to borrow',
+item10 = Item.create!(title: 'Television - Borrow',
                      description: 'Panasonic TX-32E302B 720p HD Ready 32-Inch LED TV with Freeview HD - Black (2018 Model) ',
                      user: hugo,
                      category: electronics,
@@ -201,8 +201,8 @@ item10_id = item10.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/41ZWZ795YML.jpg"
-item11 = Item.create!(title: 'Gameboy Advance with games available to borrow',
-                     description: 'Nintendo Clear Blue Console. £15 deposit.',
+item11 = Item.create!(title: 'GBA with games - Borrow',
+                     description: 'Nintendo Clear Blue Console. Comes with Super Mario and Legend of Zelda.',
                      user: hugo,
                      price: 15,
                      category: electronics,
@@ -212,8 +212,8 @@ item11.save
 item11_id = item11.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/71xOHP49ybL._SL1500_.jpg"
-item12 = Item.create!(title: 'Old Boombox free to collect',
+url = "https://images-na.ssl-images-amazon.com/images/I/71l6HOCEnWL._SL1500_.jpg"
+item12 = Item.create!(title: 'Cassette Player - Free',
                      description: 'ACE Retro Cassette Radio',
                      user: harry,
                      category: electronics,
@@ -224,7 +224,7 @@ item12_id = item12.id
 
 
 url = "https://images-na.ssl-images-amazon.com/images/I/91nhdXZB8FL._UY741_.jpg"
-item13 = Item.create!(title: 'Old Levis free to collect',
+item13 = Item.create!(title: 'Old Levis - Free',
                      description: 'Levis Mens 501 s Original Fit Straight Jeans,Blue (Stonewash 0114)-W32/L34',
                      user: jof,
                      category: clothing,
@@ -234,7 +234,7 @@ item13.save
 item13_id = item13.id
 
 url = "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201809/180919_For_Website_newsletter__2_.png?6zHXseCaCKKUVG0BLhJr6fVnE.21q4Ux"
-item14 = Item.create!(title: 'Selection of books - free to collect',
+item14 = Item.create!(title: 'Selection of books - Free',
                      description: 'Great selection of books I need to get rid of to make some space. You can see the titles in the photo',
                      user: jof,
                      category: books,
@@ -244,7 +244,7 @@ item14.save
 item14_id = item14.id
 
 url = "https://bookriot.com/wp-content/uploads/2019/06/comics-feature-640x340-2.jpg"
-item15 = Item.create!(title: 'Selection of comics - free to collect',
+item15 = Item.create!(title: 'Selection of comics - Free',
                      description: 'Getting rid of my sons comics. Free collect or they will go in the bin!!!',
                      user: fred,
                      category: books,
@@ -254,7 +254,7 @@ item15.save
 item15_id = item15.id
 
 url = "http://ironoctopusfitness.com/wp-content/uploads/2017/07/converse.jpg"
-item16 = Item.create!(title: 'Old pair of trainers - free to collect',
+item16 = Item.create!(title: 'Old pair of trainers - Free',
                      description: 'Well worn but still have some life in them. Size 5.',
                      user: harry,
                      category: clothing,
@@ -264,18 +264,19 @@ item16.save
 item16_id = item16.id
 
 
-url = "http://ironoctopusfitness.com/wp-content/uploads/2017/07/converse.jpg"
-item17 = Item.create!(title: 'Old pair of trainers - free to collect',
-                     description: 'Well worn converse but still have some life in them. Size 5.',
+url = "https://www.silvermushroom.com/wp-content/uploads/2018/03/0025.407_1-e1453828659601.jpg"
+item17 = Item.create!(title: 'Drinks dispenser - Borrow',
+                     description: 'Kilner Vintage Drinks Dispenser – 5 Litre.',
                      user: harry,
-                     category: clothing,
+                     price: 15,
+                     category: catering,
                       )
 item17.remote_photo_url = url
 item17.save
 item17_id = item17.id
 
 url = "https://www.oldbootsofas.com/images/products/zoom/1406808166-22760200.jpg"
-item18 = Item.create!(title: 'Old sofa - free to collect',
+item18 = Item.create!(title: 'Old sofa - Free',
                      description: 'Large sofa available for collection. It is very large so you will need a van.',
                      user: jeff,
                      category: furniture,
@@ -285,9 +286,10 @@ item18.save
 item18_id = item18.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/61CqP90HCxL._SL1380_.jpg"
-item19 = Item.create!(title: 'Camping Chef Folding Compact Stove',
+item19 = Item.create!(title: 'Camping Chef Stove - Borrow',
                      description: 'Its two high power burners allow you to cook food to perfection with ease while the third radiant burner underneath is ideal for toasting bread or bacon. Perfect for longer get aways and family cooking.',
                      user: ali,
+                     price: 40,
                      category: travel,
                       )
 item19.remote_photo_url = url
@@ -295,9 +297,10 @@ item19.save
 item19_id = item19.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/61YtkJ3x4mL._SL1222_.jpg"
-item20 = Item.create!(title: ' Camping Cookware Kit',
+item20 = Item.create!(title: ' Camping Cookware Kit - Borrow',
                      description: 'Cooking pan & pot made of high quality FDA approved Non-Toxic anodized Aluminum,solid and durable. They can be heated up quickly and evenly to do the delicious food. So you can enjoy the scenery of the trip with families and friends!',
                      user: ali,
+                     price: 25,
                      category: travel,
                       )
 item20.remote_photo_url = url
@@ -305,87 +308,98 @@ item20.save
 item20_id = item20.id
 
 url = "https://images-na.ssl-images-amazon.com/images/I/61oen7829eL._SL1000_.jpg"
-item21 = Item.create!(title: 'Backpacking Stove',
+item21 = Item.create!(title: 'Backpacking Stove - Borrow',
                      description: 'Made of strong stainless steel, this camping stove is built to last long even under heavy weight or high heat.',
                      user: ali,
+                     price: 30,
                      category: travel,
                       )
 item21.remote_photo_url = url
 item21.save
 item21_id = item21.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/71cdzICrLKL._SL1500_.jpg"
-item22 = Item.create!(title: 'Stand Fan',
-                     description: 'Eco-friendly DC motor uses less energy than a traditional AC motor whilst still providing a powerful air flow',
+url = "https://www.pipii.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/colourful-creatures-party-paper-plates.jpg"
+item22 = Item.create!(title: 'Party Plates - Borrow',
+                     description: 'Ideal for childrens parties',
                      user: ali,
-                     category: furniture,
+                     price: 27,
+                     category: catering,
                       )
 item22.remote_photo_url = url
 item22.save
 item22_id = item22.id
 
-# item23 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item23.remote_photo_url = url
-# item23.save
-# item23_id = item23.id
+url = "https://www.royalalbert.co.uk/media/catalog/product/cache/10/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/r/o/royal-albert-old-country-roses-cake-stand-798901569039.jpg"
+item23 = Item.create!(title: 'Cake Stand - Borrow',
+                     description: 'Ideal for occasions when you need a cake stand',
+                     user: wes,
+                     price: 50,
+                     category: catering,
+                      )
+item23.remote_photo_url = url
+item23.save
+item23_id = item23.id
 
-# item24 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item24.remote_photo_url = url
-# item24.save
-# item24_id = item24.id
+url = "https://loeffelland.de/wp-content/uploads/2019/03/il_570xN.1597705638_qp71.jpg"
+item24 = Item.create!(title: 'Cutley set - Free',
+                     description: 'Cutlery set. Well used but still in good condition',
+                     user: ben,
+                     category: home,
+                      )
+item24.remote_photo_url = url
+item24.save
+item24_id = item24.id
 
-# item26 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item26.remote_photo_url = url
-# item26.save
-# item26_id = item26.id
+url = "https://imgaz1.chiccdn.com/thumb/large/oaupload/newchic/images/67/BB/0f2bf59c-52cc-4558-8b27-c2533e1cf164.jpg"
+item26 = Item.create!(title: 'Cat bed - Free',
+                     description: 'Luxury cat bed available. Ours prefers to sleep in a cardboard box.',
+                     user: jof,
+                     category: pets,
+                      )
+item26.remote_photo_url = url
+item26.save
+item26_id = item26.id
 
-# item27 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item27.remote_photo_url = url
-# item27.save
-# item27_id = item27.id
+url = "https://i.ytimg.com/vi/BgIgKcqPd4k/maxresdefault.jpg"
+item27 = Item.create!(title: 'Kittens - Free',
+                     description: 'Free to responsible owners. You will need a home visit!!!',
+                     user: harry,
+                     category: pets,
+                      )
+item27.remote_photo_url = url
+item27.save
+item27_id = item27.id
 
-# item28 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item28.remote_photo_url = url
-# item28.save
-# item28_id = item28.id
+url = "https://images-na.ssl-images-amazon.com/images/I/51UaD6gfCNL._SY355_.jpg"
+item28 = Item.create!(title: 'Hamster Cage - Free',
+                     description: 'Unfortunately or hamster has passed away but we would like to pass on this wonderful cage.',
+                     user: wes,
+                     category: pets,
+                      )
+item28.remote_photo_url = url
+item28.save
+item28_id = item28.id
 
-# item29 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item29.remote_photo_url = url
-# item29.save
-# item29_id = item29.id
+url = "https://www.lampandlight.co.uk/media/catalog/product/cache/75eed2686e01eb22cb4050b2f40ddf97/4/4/6946_44191_0.jpg"
+item29 = Item.create!(title: 'Bankers lamp - Free',
+                     description: 'Old lamp we no longer need',
+                     user: fred,
+                     category: home,
+                      )
+item29.remote_photo_url = url
+item29.save
+item29_id = item29.id
 
-# item30 = Item.create!(title: 'Old sofa - free to collect',
-#                      description: 'Large sofa available for collection. It is very large so you will need a van.',
-#                      user: jeff,
-#                      category: furniture,
-#                       )
-# item30.remote_photo_url = url
-# item30.save
-# item30_id = item30.id
+url = "https://www.4home.co.za/images/stories/virtuemart/product/ryobi-1800w-electric-saw-350mm-(cs-1835)4.jpg"
+item30 = Item.create!(title: 'Electric Saw - Borrow',
+                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     user: hugo,
+                     price: 60,
+                     category: tools,
+                      )
+item30.remote_photo_url = url
+item30.save
+item30_id = item30.id
 
 
 puts 'Creating reviews...'

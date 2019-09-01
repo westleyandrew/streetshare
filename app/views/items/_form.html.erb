@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-4 offset-sm-4">
-      <%= simple_form_for @item do |f| %>
-        <%= f.input :title, label: 'Please add a title for the item listing' %>
-        <%= f.input :description, label: 'Please add a detailed description of the item'%>
-        <p>Please select an item category</p>
-        <%= f.association :category %>
-        <%= f.input :price, label: 'Security deposit required? (enter 0.00 if being given for free)'%>
-        <%= f.input :photo, label: 'Please add a photo of the item' %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+    <div class="col-sm-6 offset-sm-3">
+      <div class="form-post">
+        <%= simple_form_for @item do |f| %>
+          <%= f.input :title, label: 'Please add a title for the item listing' %>
+          <%= f.input :description, label: 'Please add a detailed description of the item'%>
+          <p>Please select an item category</p>
+          <%= f.association :category %>
+          <%= f.input :price, label: 'Security deposit required? (enter 0.00 if being given for free)'%>
+          <%= f.input :photo, label: 'Please add a photo of the item' %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
-

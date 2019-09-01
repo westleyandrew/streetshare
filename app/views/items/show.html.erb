@@ -4,11 +4,13 @@
   <br>
   <h4 class="text-inline h1_text_pages"><%= @item.title %></h4>
   <div class="top-info">
-    <% if @item.user_id == current_user.id %>
-      <%= link_to "Edit item", edit_item_path %> |
-      <%= link_to "Delete item", item_path(@item),
-       method: :delete,
-       data: { confirm: "Are you sure?" } %>
+    <% unless current_user.nil? %>
+      <% if @item.user_id == current_user.id %>
+        <%= link_to "Edit item", edit_item_path %> |
+        <%= link_to "Delete item", item_path(@item),
+         method: :delete,
+         data: { confirm: "Are you sure?" } %>
+       <% end %>
      <% end %>
   </div>
   <div class="photo-calendar">
@@ -64,41 +66,42 @@
 
   <hr>
   <br>
-
-  <% unless @item.user_id == current_user.id %>
-    <div class="container" id="item-review-list">
-     <h3 class ="h1_text_pages">Reviews</h3>
-       <% @item.reviews.each do |review| %>
-         <div class="review-title">
+  <% unless current_user.nil? %>
+    <% unless @item.user_id == current_user.id %>
+      <div class="container" id="item-review-list">
+       <h3 class ="h1_text_pages">Reviews</h3>
+         <% @item.reviews.each do |review| %>
            <div class="review-title">
-             <%= review.title %>
+             <div class="review-title">
+               <%= review.title %>
+             </div>
            </div>
-         </div>
-         <div class="review-container">
-           <div class="review-rating">
-             <%= review.rating %>
+           <div class="review-container">
+             <div class="review-rating">
+               <%= review.rating %>
+             </div>
+             <div class="review-body d-flex align-items-center">
+               "<%= review.body %>"
+             </div>
            </div>
-           <div class="review-body d-flex align-items-center">
-             "<%= review.body %>"
-           </div>
-         </div>
-       <% end %>
-    </div>
-    <div class="container container-review">
-     <div class="row">
-       <div class="col-sm-4 h1_text_pages form-post">
-         <h4>Add a review for the item</h4>
-         <%= simple_form_for [@item, @review], remote: true do |f| %>
-           <%= f.input :title, label: 'Please add your title and name' %>
-           <%= f.input :body, label: 'Please add your review' %>
-           <p>Rating</p>
-           <%= f.collection_radio_buttons :rating, [['1', '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
-           <p></p>
-           <%= f.submit "Submit review", class: 'btn btn-primary' %>
          <% end %>
+      </div>
+      <div class="container container-review">
+       <div class="row">
+         <div class="col-sm-4 h1_text_pages form-post">
+           <h4>Add a review for the item</h4>
+           <%= simple_form_for [@item, @review], remote: true do |f| %>
+             <%= f.input :title, label: 'Please add your title and name' %>
+             <%= f.input :body, label: 'Please add your review' %>
+             <p>Rating</p>
+             <%= f.collection_radio_buttons :rating, [['1', '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
+             <p></p>
+             <%= f.submit "Submit review", class: 'btn btn-primary' %>
+           <% end %>
+         </div>
        </div>
-     </div>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

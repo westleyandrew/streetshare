@@ -172,6 +172,7 @@ url = "https://media.4rgos.it/i/Argos/6064363_R_Z001A?w=750&h=440&qlt=70"
 item8 = Item.create!(title: 'Spade - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
                      user: wes,
+                     price: 10,
                      category: garden,
                       )
 item8.remote_photo_url = url
@@ -183,6 +184,7 @@ url = "https://images-na.ssl-images-amazon.com/images/I/516HkK-UxEL.jpg"
 item9 = Item.create!(title: 'Deck chair - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
                      user: hugo,
+                     price: 5.50,
                      category: garden,
                       )
 item9.remote_photo_url = url
@@ -193,6 +195,7 @@ url = "https://images-na.ssl-images-amazon.com/images/I/61gmnonBaKL._SL1000_.jpg
 item10 = Item.create!(title: 'Television - Borrow',
                      description: 'Panasonic TX-32E302B 720p HD Ready 32-Inch LED TV with Freeview HD - Black (2018 Model) ',
                      user: hugo,
+                     price: 100,
                      category: electronics,
                       )
 item10.remote_photo_url = url

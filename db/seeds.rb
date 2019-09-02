@@ -105,8 +105,7 @@ item1 = Item.create!(title: 'Tent - Borrow',
                      description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty. Deposit is £20',
                      user: sam,
                      price: 20,
-                     category: travel,
-                     address: "138 Kingsland Road, London"
+                     category: travel
                       )
 item1.remote_photo_url = url
 item1.save
@@ -117,8 +116,7 @@ item2 = Item.create!(title: 'Toolkit - Borrow',
                      description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set. £25 Deposit',
                      user: sam,
                      price: 25,
-                     category: tools,
-                     address: "Liverpool street station, London"
+                     category: tools
                       )
 item2.remote_photo_url = url
 item2.save

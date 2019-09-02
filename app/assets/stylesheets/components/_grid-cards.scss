@@ -25,9 +25,12 @@
 
 .cards {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-bottom: 4%;
+  flex-grow: 1;
+  // float: left;
 }
 
 .card-info {
@@ -42,6 +45,33 @@
     color: #e7e713;
   }
 }
+
+.index-cards {
+  grid-template-columns: 1fr 1fr 1fr !important;
+  flex-grow: 1 !important;
+  width: 50% !important;
+}
+
+#map {
+  height: calc(100vh - 120px);
+  position: sticky;
+  top: 0;
+  width: 40%;
+  margin-left: 3%;
+  // float: right;
+  // transition: all 0.4s;
+}
+
+.map-padding {
+  padding-top: 100px;
+}
+
+// .spacer
+// {
+//     width: 100%;
+//     height: 95px;
+//     position: fixed;
+// }
 
 .card-link {
   text-decoration: none !important;

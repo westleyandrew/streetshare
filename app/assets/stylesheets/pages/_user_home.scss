@@ -7,7 +7,7 @@
 
 .item-li {
   list-style: none;
-  border: 2px solid green;
+  border: 2px solid #62cd7a;
   padding: 10px;
   margin:5px;
   width: 50%;
@@ -19,4 +19,36 @@
 
 .hide {
   display: none;
+}
+
+.light-green {
+  background-color: #62cd7a !important;
+}
+
+.item-flex-list {
+    position: relative;
+    margin: 1em;
+    overflow: hidden;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+.item-flex-list ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -1px;
+    list-style: none !important;
+    padding-left: 0px;
+}
+.item-flex-list li {
+    flex-grow: 1;
+    flex-basis: auto;
+    margin: .25em 0;
+    padding: 0 1em;
+    text-align: center;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 50px;
+    font-size: 24px;
 }

@@ -1,60 +1,74 @@
 <h1>Hi <%= @user.first_name %></h1>
 <br />
-<h2 class="user-items">Here is a list of your items:</h2>
-<%= render partial: "shared/plus_minus" %>
-<div class="hide user-item-container">
-  <% @user_items.each do |item| %>
-    <%= link_to item_path(item), :action => 'go' do %>
-      <div class="item-li">
-        <%#= render partial: "shared/card", object: item, locals: {item_div: true} %>
-        <%= render 'shared/card', item: item, item_var: item, order_div: false %>
-        <span>
-          <button type="button" class="btn btn-info btn-sm item-btn">
-            <%= link_to "Edit item", edit_item_path(item) %>
-          </button>
-          <button type="button" class="btn btn-danger btn-sm item-btn">
-            <%= link_to "Delete", item_path(item),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-          </button>
-        </span>
-      </div>
-    <% end %>
-  <% end %>
+<!-- <h2 class="user-items">Here is a list of your items:</h2> -->
+<%#= render partial: "shared/plus_minus" %>
+<div class="item-flex-list">
+  <ul>
+    <li class="user-display user-items-btn light-green"><strong>My Items</strong></li>
+    <li class="user-display user-orders-btn"> <strong>My Orders</strong> </li>
+    <li class="user-display user-reservations-btn"> <strong>Other User Reservations</strong> </li>
+  </ul>
 </div>
 
-<br />
-<h2 class="user-orders user-item-parent">Here is the list of items you have requested or borrowed:</h2>
-<%= render partial: "shared/plus_minus" %>
-<div class="hide user-item-container">
-  <% @user_orders.each do |order| %>
-    <%= link_to order_path(order), :action => 'go' do %>
-      <div class="item-li">
-        <%= render 'shared/card', order: order, user: order.item.user, item_var: order.item, order_div: true %>
-      </div>
+<div id="item-display-div">
+
+  <div class="user-item-container user-items">
+    <h2>Your items:</h2>
+    <% @user_items.each do |item| %>
+      <%= link_to item_path(item), :action => 'go' do %>
+        <div class="item-li">
+          <%#= render partial: "shared/card", object: item, locals: {item_div: true} %>
+          <%= render 'shared/card', item: item, item_var: item, order_div: false %>
+          <span>
+            <button type="button" class="btn btn-info btn-sm item-btn">
+              <%= link_to "Edit item", edit_item_path(item) %>
+            </button>
+            <button type="button" class="btn btn-danger btn-sm item-btn">
+              <%= link_to "Delete", item_path(item),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+            </button>
+          </span>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
+
+  <!-- <h2 class="user-orders user-item-parent">Here is the list of items you have requested or borrowed:</h2> -->
+  <%#= render partial: "shared/plus_minus" %>
+  <div class="hide user-item-container user-orders">
+    <%= month_calendar events: @user.orders do |date, orders| %>
+      <%= date %>
+        <% orders.each do |order| %>
+      <div>
+        <%= order.item.title %>
+       </div>
+        <% end %>
+    <% end %>
+    <h2>Items you've booked:</h2>
+    <% @user_orders.each do |order| %>
+      <%= link_to order_path(order), :action => 'go' do %>
+        <div class="item-li">
+          <%= render 'shared/card', order: order, user: order.item.user, item_var: order.item, order_div: true %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <!-- <h2 class="user-orders user-item-parent">Here is your current list of requested items. Please approve or reject these requests.</h2> -->
+  <%#= render partial: "shared/plus_minus" %>
+  <div class="hide user-item-container user-reservations">
+    <h2>Items of yours that have been booked:</h2>
+    <% @my_orders.each do |order| %>
+      <%= link_to order_path(order), :action => 'go' do %>
+        <div class="item-li">
+          <%= render 'shared/card', order: order, user: order.user, item_var: order.item, order_div: true %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
 </div>
 
-<br />
-<h2 class="user-orders user-item-parent">Here is your current list of requested items. Please approve or reject these requests.</h2>
-<%= render partial: "shared/plus_minus" %>
-<div class="hide user-item-container">
-  <% @my_orders.each do |order| %>
-    <%= link_to order_path(order), :action => 'go' do %>
-      <div class="item-li">
-        <%= render 'shared/card', order: order, user: order.user, item_var: order.item, order_div: true %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
 
 
-<%= month_calendar events: @user.orders do |date, orders| %>
-  <%= date %>
-    <% orders.each do |order| %>
-    <div>
-      <%= order.item.title %>
-    </div>
-  <% end %>
-<% end %>

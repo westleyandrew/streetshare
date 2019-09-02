@@ -7,18 +7,23 @@
           <ul style="list-style: none;">
             <% item = Item.find(@order.item_id) %>
             <% user = User.find(@order.user_id) %>
-            <li><p>Request status: <%= @order.state %></p></li>
-            <li><p>Item: <%= item.title %></p></li>
-            <li><p>Requested by <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)</p></li>
-            <li><p>Amount: <%= humanized_money_with_symbol(@order.amount) %></p></li>
+            <li><p><strong>Request status:</strong> <%= @order.state %></p></li>
+            <li><p><strong>Item:</strong> <%= item.title %></p></li>
+            <li><p><strong>Requested by:</strong> <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)</p></li>
             <br>
-            <%= link_to "Edit this order", edit_order_path, class: 'btn btn-primary' %>
+            <% if (@order.amount_cents != 0) && (@order.state == 'pending') %>
+              <%= render 'payment' %>
+            <% end %>
             <br>
-            <%= link_to "Delete this order", order_path(@order),
-                method: :delete,
-                data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
-                <br>
-                <%= link_to "Back to user home page", user_show_path, class: 'btn btn-primary' %>
+              <% if current_user == item.user_id %>
+                <%= link_to "Edit this order", edit_order_path, class: 'btn btn-primary' %>
+              <br>
+               <%= link_to "Delete this order", order_path(@order),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }, class: 'btn btn-primary' %>
+              <br>
+              <% end %>
+              <%= link_to "Back to user home page", user_show_path, class: 'btn btn-primary' %>
           <ul>
       </div>
     </div>

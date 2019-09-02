@@ -16,19 +16,10 @@ initMapbox();
 
 initSweetalert();
 
-// $(".user-item-parent").on("click", function() {
-//   const thisTarget = $(this).next(".user-item-container");
-//   $(thisTarget).fadeToggle("slow");
-//   $(thisTarget).toggleClass("hide");
-// });
-
-// $('.circle-plus').on('click', function(){
-//   $(this).toggleClass('opened');
-// })
-
+// toggle classes for user homepage item tabsS
 $(".user-display").on("click", function() {
-  $(".user-display").removeClass("light-green");
-  $(this).addClass("light-green");
+  $(".user-display").removeClass("lgt-green");
+  $(this).addClass("lgt-green");
   const items = "user-items-btn";
   const orders = "user-orders-btn";
   const reservations = "user-reservations-btn";
@@ -50,3 +41,12 @@ $(".user-display").on("click", function() {
   }
 });
 
+// $(".user-item-parent").on("click", function() {
+//   const thisTarget = $(this).next(".user-item-container");
+//   $(thisTarget).fadeToggle("slow");
+//   $(thisTarget).toggleClass("hide");
+// });
+
+// $('.circle-plus').on('click', function(){
+//   $(this).toggleClass('opened');
+// })

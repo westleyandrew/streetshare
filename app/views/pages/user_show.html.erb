@@ -4,7 +4,7 @@
 <%#= render partial: "shared/plus_minus" %>
 <div class="item-flex-list">
   <ul>
-    <li class="user-display user-items-btn light-green"><strong>My Items</strong></li>
+    <li class="user-display user-items-btn lgt-green"><strong>My Items</strong></li>
     <li class="user-display user-orders-btn"> <strong>My Orders</strong> </li>
     <li class="user-display user-reservations-btn"> <strong>Other User Reservations</strong> </li>
   </ul>
@@ -55,6 +55,23 @@
       <%= link_to order_path(order), :action => 'go' do %>
         <div class="item-li">
           <%= render 'shared/card', order: order, user: order.user, item_var: order.item, order_div: true %>
+            <% if order.state === "pending" %>
+              <button type="button" class="btn btn-info btn-sm item-btn">
+                <%= link_to "Approve", order_path(order, order: {state: "approved"}), method: :put, data: { confirm: "Are you sure you wish to approve this request?"}
+                 %>
+              </button>
+              <button type="button" class="btn btn-danger btn-sm item-btn">
+                <%= link_to "Decline", order_path(order),
+                method: :delete,
+                data: { confirm: "Are you sure you wish to decline this request?" } %>
+              </button>
+            <% else %>
+              <button type="button" class="btn btn-danger btn-sm item-btn">
+                <%= link_to "Cancel", order_path(order),
+                method: :delete,
+                data: { confirm: "Are you sure you wish to cancel this request?" } %>
+              </button>
+            <% end %>
         </div>
       <% end %>
     <% end %>

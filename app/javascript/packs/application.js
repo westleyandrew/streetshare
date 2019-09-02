@@ -22,23 +22,39 @@ $(".user-display").on("click", function() {
   $(this).addClass("lgt-green");
   const items = "user-items-btn";
   const orders = "user-orders-btn";
-  const reservations = "user-reservations-btn";
+  const requests = "other-user-requests-btn";
+  const reservations = "other-user-reservations-btn";
   if ($(this).hasClass(items)) {
     console.log('user-items-btn');
     $('.user-items').toggleClass('hide');
     $('.user-orders').addClass('hide');
-    $('.user-reservations').addClass('hide');
   } else if ($(this).hasClass(orders)) {
     console.log('user-orders-btn');
     $('.user-orders').toggleClass('hide');
-    $('.user-reservations').addClass('hide');
     $('.user-items').addClass('hide');
+  } else if ($(this).hasClass(requests)) {
+    console.log('user-orders-btn');
+    $('.other-user-requests').toggleClass('hide');
+    $('.other-user-reservations').addClass('hide');
   } else if ($(this).hasClass(reservations)) {
     console.log('user-reservations-btn');
-    $('.user-reservations').toggleClass('hide');
-    $('.user-orders').addClass('hide');
-    $('.user-items').addClass('hide');
+    $('.other-user-reservations').toggleClass('hide');
+    $('.other-user-requests').addClass('hide');
   }
+});
+
+$('#btn-bg').click(function(){
+  $('#btn-bg').toggleClass('active');
+  if($('#btn-bg').hasClass("active")){
+    $('#power-text strong').text('ON').css('color', '#61fc8c');
+  }else{
+    $('#power-text strong').text('OFF').css('color', '#2a2a2a');
+  }
+});
+
+$('#user-toggle').on('mouseup', function() {
+  $('#user-borrowing-div').toggleClass('hide');
+  $('#user-lending-div').toggleClass('hide');
 });
 
 // $(".user-item-parent").on("click", function() {

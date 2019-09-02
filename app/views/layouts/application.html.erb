@@ -24,20 +24,23 @@
   </head>
   <body>
     <div class="site">
-      <div class="header-navbar">
-        <% if @home %>
-          <%= render 'shared/header' %>
-        <% else %>
-          <%= render 'shared/navbar' %>
-        <% end %>
-      </div>
+      <% if @home %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+
       <%= render 'shared/flashes' %>
       <div class="main-content">
         <%= yield %>
       </div>
-      <div class="footer">
-        <%= render 'shared/footer' %>
-      </div>
+
+      <% if controller_name == 'pages' %>
+        <div class="footer">
+          <%= render 'shared/footer' %>
+        </div>
+      <% end %>
+
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
     </div>

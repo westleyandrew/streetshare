@@ -6,8 +6,13 @@ a {
     color: black;
   }
 }
-.item-container-booking {
-  padding: 4%;
+.right-container {
+  width: 500px;
+}
+
+.left-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
@@ -20,13 +25,10 @@ a {
   text-align: center;
 }
 
-.item-container-booking {
-  text-align: center;
-  margin-left: 190px;
-}
-
 .photo-calendar {
   display: flex;
+  justify-content: space-between;
+  min-height: 80vh;
 }
 
 // .middle-container {
@@ -54,6 +56,7 @@ a {
   border: 0;
   font-size: 100%;
   font: inherit;
+  max-width: 500px;
 }
 
 .text-inline {

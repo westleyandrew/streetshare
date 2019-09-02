@@ -23,70 +23,80 @@ sam = User.create!(email: "sam@gmail.com",
                    address: '19 Henryson Road, London, SE4 1HL',
                    password: "1",
                    first_name: "Sam",
-                   last_name: "Semit"
+                   last_name: "Semit",
+                   photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Iron-Man-icon.png"
                    )
 
 ben = User.create!(email: "ben@gmail.com",
                   address: '408 Brockley Rd, Brockley, London SE4 2DH',
                   password: "1",
                   first_name: "Ben",
-                  last_name: "Mart"
+                  last_name: "Mart",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Thor-icon.png"
                    )
 
 wes = User.create!(email: "wes@gmail.com",
                   address: '80 Ladywell Rd, Ladywell, London SE13 7HS',
                   password: "1",
                   first_name: "Wes",
-                  last_name: "Andrew"
+                  last_name: "Andrew",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hulk-icon.png"
                    )
 
 dan = User.create!(email: "dan@gmail.com",
                   address: '7 Rushford Road, London',
                   password: "1",
                   first_name: "Dan",
-                  last_name: "Duppol"
+                  last_name: "Duppol",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Nick-Fury-icon.png"
                   )
 
 jof = User.create!(email: "jof@gmail.com",
                   address: '20 Amyruth Road, London',
                   password: "1",
                   first_name: "Jof",
-                  last_name: "Bezos"
+                  last_name: "Bezos",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-War-Machine-icon.png"
                   )
 
 hugo = User.create!(email: "hugo@gmail.com",
                   address: '122 Brockley Rise London',
                   password: "1",
                   first_name: "Hugo",
-                  last_name: "Boss"
+                  last_name: "Boss",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Loki-icon.png"
                   )
 
 fred = User.create!(email: "fred@gmail.com",
                   address: '17 Algernon Road, London',
                   password: "1",
                   first_name: "Fred",
-                  last_name: "Martines"
+                  last_name: "Martines",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Captain-America-icon.png"
                   )
 
 jeff = User.create!(email: "jeff@gmail.com",
                   address: '108 Codrington Hill London',
                   password: "1",
                   first_name: "Jeff",
-                  last_name: "Smith"
+                  last_name: "Smith",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Black-Widow-icon.png"
                   )
 
 harry = User.create!(email: "harry@gmail.com",
                   address: 'Ivy Road, Brockley, London',
                   password: "1",
                   first_name: "Harry",
-                  last_name: "Potter"
+                  last_name: "Potter",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Giant-Man-icon.png"
                   )
 
 ali = User.create!(email: "ali@gmail.com",
                   address: 'Merritt Road, Brockley, London',
                   password: "1",
                   first_name: "Muahmmed",
-                  last_name: "Ali"
+                  last_name: "Ali",
+                  photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hawkeye-icon.png"
                   )
 
 url = "https://lifeundercanvas.co.uk/wp-content/uploads/2018/05/IMG_6821.jpg"

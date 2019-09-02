@@ -21,17 +21,24 @@
 
 <div style="display: flex; justify-content: space-around;">
   <div class="cards index-cards">
-    <% @items_paginator.each do |item| %>
-      <%= render "shared/grid-cards", item: item %>
+    <% if @items.blank? %>
+      <h1>There are no items for this search</h1>
+    <% else %>
+      <% @items.each do |item| %>
+        <%= render "shared/grid-cards", item: item %>
+      <% end %>
     <% end %>
+
     <%= paginate @items_paginator %>
   </div>
 
-  <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
+  <% if !@items.blank? %>
+    <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
+  <% end %>
 
 </div>
 

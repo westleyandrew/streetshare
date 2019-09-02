@@ -13,4 +13,7 @@ Rails.application.routes.draw do
 
   get 'pages/user', to: 'pages#user_show', as: :user_show
 
+  resources :conversations do
+    resources :messages
+  end
 end

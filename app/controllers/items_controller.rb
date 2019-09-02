@@ -34,6 +34,7 @@ class ItemsController < ApplicationController
           # image_url: helpers.asset_url('item.png')
         }
       end
+      # raise
     else
       flash[:notice] = 'Please fill all the fields'
       redirect_to root_path

@@ -1,12 +1,13 @@
 .user {
   width: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
   display: block;
   background: $green;
   padding: 10px 0 15px 0;
   font-size: 0.9em;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
+  padding: 10px;
 }
 
 .user:hover {
@@ -27,7 +28,7 @@
 }
 
 .message {
-  border: 1px solid blue;
+  border: 1px solid $green;
   display: block;
   width: 100%;
 }
@@ -46,6 +47,7 @@
   width: 40px;
   border-radius: 50%;
   float: left;
+  margin-right: 10px;
 }
 
 .img-message {
@@ -107,7 +109,6 @@
   height: 92vh;
   min-height: 300px;
   max-height: 720px;
-  background: #E6EAEA;
 }
 
 .segment,
@@ -117,10 +118,16 @@
 }
 
 .conversations {
-  height: 86%;
+  height: 100%;
+  background: #E6EAEA;
+
 }
 
 .segment {
   overflow: scroll;
 }
 
+.message-form {
+  display: flex;
+  flex-direction: row;
+}

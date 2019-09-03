@@ -1,7 +1,13 @@
-<div class="card-product">
-  <%#= cl_image_path item_var.photo %>
+<% order_class="card-product " %>
+  <% if order_div %>
+    <% if order.state === "approved" %>
+      <% order_class << "lgt-green" %>
+    <% elsif order.state === "pending" %>
+      <% order_class << "lgt-yellow" %>
+    <% end %>
+  <% end %>
+<div class="<%= order_class %>">
   <img src=<%= cl_image_path item_var.photo %> />
-  <!-- <img sr=cin"https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> -->
   <div class="card-product-infos">
     <!-- if card is an item card -->
     <% unless order_div %>

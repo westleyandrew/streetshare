@@ -4,8 +4,8 @@
   background-position: center;
   height: 180px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -21,6 +21,10 @@
     background: #ebebeb;
     box-shadow: 4px 4px 11px rgba(0,0,0,0.2);
   }
+}
+
+.remove-underline {
+  text-decoration: none !important;
 }
 
 .cards {

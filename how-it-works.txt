@@ -1,0 +1,15 @@
+Streetshare is an app we have developed to help people save money and foster community spirit.
+
+How it works:
+
+Free items:
+
+Items are added to the site and are either free or can be borrowed after leaving a deposit with the owner.
+
+For free items the owner there may be may requests for the item and the owner can accept a request and reject the others.
+
+Items available to borrow:
+
+For items that require a deposit, the deposit is paid at the time of reservation.
+
+We have a fully featured messaging system so users can easily communicate with each other.

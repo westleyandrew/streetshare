@@ -29,12 +29,13 @@
           <% conversation.messages.each do |message| %>
             <div class="header">
               <strong>
-                <%= message.user.first_name %>
+                <%= image_tag (message.user.photo), class: "img img-message" %>
+                <%#= message.user.first_name %>
               </strong>
-              <%= message.message_time %>
+              <%#= message.message_time %>
             </div>
             <div class="list">
-              <div class="item">
+              <div class="item body-message">
                 <i class="right triangle icon"></i>
                 <%= message.body %>
               </div>

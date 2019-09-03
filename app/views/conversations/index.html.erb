@@ -2,6 +2,11 @@
   <h3>Mailbox</h3>
   <div class="conversations">
     <div class="users">
+      <div class="current_user">
+        <%= image_tag (current_user.photo), class: "img" %>
+        <%= current_user.first_name %>
+        <%= current_user.last_name %>
+      </div>
       <% @conversations.each do |conversation| %>
         <%= link_to(toggle_conversations_path(conversation: conversation), remote: true) do  %>
         <div class="user">

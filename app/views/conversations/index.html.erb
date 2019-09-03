@@ -40,9 +40,9 @@
     </div>
 
     <div class="messages">
-
-      <%= render 'conversation', conversation: @conversations.first %>
-
+      <% unless @conversations.empty? %>
+        <%= render 'conversation', conversation: @conversations.first%>
+      <% end %>
     </div>
   </div>
 

@@ -3,6 +3,7 @@
   <div class="conversations">
     <div class="users">
       <% @conversations.each do |conversation| %>
+        <%= link_to(toggle_conversations_path(conversation: conversation), remote: true) do  %>
         <div class="user">
           <div class="ui list">
             <div class="item">
@@ -23,68 +24,14 @@
             </div>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
 
     <div class="messages">
-      <% @conversations.each do |conversation| %>
-        <div class="message">
-          <div class="ui segment">
-            <% conversation.messages.each do |message| %>
-              <% if message.user == conversation.sender %>
-                <% message_user = 'sender' %>
-                <div class="<%= message_user %>">
-                  <div class="list body-list">
-                    <div class="item body-message">
-                      <i class="right triangle icon"></i>
-                      <%= message.body %>
-                    </div>
-                    <div class="message-time">
-                      <%= message.message_time %>
-                    </div>
-                  </div>
-                  <div class="header">
-                    <strong>
-                      <%= image_tag (message.user.photo), class: "img img-message" %>
-                      <%#= message.user.first_name %>
-                    </strong>
-                  </div>
-                </div>
-              <% else message.user == conversation.recipient %>
-                <% message_user = 'recipient' %>
-                <div class="<%= message_user %>">
-                  <div class="header">
-                    <strong>
-                      <%= image_tag (message.user.photo), class: "img img-message" %>
-                      <%#= message.user.first_name %>
-                    </strong>
-                  </div>
-                  <div class="list body-list">
-                    <div class="item body-message">
-                      <i class="right triangle icon"></i>
-                      <%= message.body %>
-                    </div>
-                    <div class="message-time">
-                      <%= message.message_time %>
-                    </div>
-                  </div>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <div>
-            <%= form_for [conversation, Message.new], html: {class: "ui reply form"} do |f| %>
-              <div class="field">
-                <%= f.text_area :body, class: "form-control", placeholder: "Write your message..."%>
-              </div>
-              <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-              <div>
-                <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      <% end %>
+
+      <%= render 'conversation', conversation: @conversations.first %>
+
     </div>
   </div>
 

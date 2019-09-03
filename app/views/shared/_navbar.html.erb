@@ -16,10 +16,13 @@
           <%= link_to "Homepage", root_path, class: "nav-link", id: "colorwh" %>
         </li>
         <li class="nav-item active">
-          <%= link_to "Account", user_show_path, class: "nav-link", id: "colorwh" %>
+          <%= link_to "Messages", conversations_path, class: "nav-link", id: "colorwh" %>
         </li>
         <li class="nav-item">
           <%= link_to "Add item", new_item_path, class: "nav-link", id: "colorwh" %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Account", user_show_path, class: "nav-link", id: "colorwh" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

@@ -56,6 +56,53 @@
   width: 50% !important;
 }
 
+#how-it-works {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-steps {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-around;
+}
+
+.step {
+  width: 30%;
+}
+
+.intro-about {
+  text-align: center;
+  font-size: 25px;
+  color: $dark-gray;
+  font: $body-font;
+}
+
+.img-about-left {
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.img-about-middle {
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.img-about-right {
+  width: 80px;
+  border-radius: 50%;
+  height: 80px;
+  margin-bottom: 10px;
+}
 
 
 // .spacer

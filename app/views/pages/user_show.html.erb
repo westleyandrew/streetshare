@@ -4,9 +4,9 @@
 <%#= render partial: "shared/plus_minus" %>
 <div id="user-toggle">
   <input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
-  <label for="toggle-on" class="user-toggle-btn">Lending</label>
+  <label for="toggle-on" class="user-toggle-btn user-home ss-active">My Home</label>
   <input id="toggle-off" class="toggle toggle-right" name="toggle" value="true" type="radio">
-  <label for="toggle-off" class="user-toggle-btn">Borrowing</label>
+  <label for="toggle-off" class="user-toggle-btn user-lend">Lending</label>
 </div>
 
 <div id="item-display-div">
@@ -14,7 +14,7 @@
   <div id="user-borrowing-div">
     <div class="item-flex-list user-display-toggle">
       <ul>
-        <li class="user-display user-items-btn lgt-green"><strong>My Items</strong></li>
+        <li class="user-display user-items-btn lgt-green ss-active"><strong>My Items</strong></li>
         <li class="user-display user-orders-btn"> <strong>My Orders</strong> </li>
       </ul>
     </div>
@@ -71,7 +71,7 @@
   <div id="user-lending-div" class="hide">
     <div class="item-flex-list user-display-toggle">
       <ul>
-        <li class="user-display other-user-requests-btn lgt-green"> <strong>Other User Requests</strong> </li>
+        <li class="user-display other-user-requests-btn ss-active lgt-green"> <strong>Other User Requests</strong> </li>
         <li class="user-display other-user-reservations-btn"> <strong>Other User Reservations</strong> </li>
       </ul>
     </div>

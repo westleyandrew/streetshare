@@ -57,8 +57,11 @@
     font-size: 24px;
 }
 
+.user-display:hover {
+  cursor: pointer;
+}
 
-//------------------toggle experiments---------------//
+//------------------user view toggle---------------//
 
 .user-toggle-btn{
     border: 3px solid #60cd78;

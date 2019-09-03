@@ -179,7 +179,7 @@ item7_id = item7.id
 url = "https://media.4rgos.it/i/Argos/6064363_R_Z001A?w=750&h=440&qlt=70"
 item8 = Item.create!(title: 'Spade - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
-                     user: wes,
+                     user: hugo,
                      price: 10,
                      category: garden,
                       )
@@ -214,7 +214,7 @@ item10_id = item10.id
 url = "https://images-na.ssl-images-amazon.com/images/I/41ZWZ795YML.jpg"
 item11 = Item.create!(title: 'GBA with games - Borrow',
                      description: 'Nintendo Clear Blue Console. Comes with Super Mario and Legend of Zelda.',
-                     user: hugo,
+                     user: wes,
                      price: 15,
                      category: electronics,
                       )
@@ -321,7 +321,7 @@ item20_id = item20.id
 url = "https://images-na.ssl-images-amazon.com/images/I/61oen7829eL._SL1000_.jpg"
 item21 = Item.create!(title: 'Backpacking Stove - Borrow',
                      description: 'Made of strong stainless steel, this camping stove is built to last long even under heavy weight or high heat.',
-                     user: ali,
+                     user: wes,
                      price: 30,
                      category: travel,
                       )
@@ -332,7 +332,7 @@ item21_id = item21.id
 url = "https://www.pipii.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/colourful-creatures-party-paper-plates.jpg"
 item22 = Item.create!(title: 'Party Plates - Borrow',
                      description: 'Ideal for childrens parties',
-                     user: ali,
+                     user: wes,
                      price: 27,
                      category: catering,
                       )
@@ -352,7 +352,7 @@ item23.save
 item23_id = item23.id
 
 url = "https://loeffelland.de/wp-content/uploads/2019/03/il_570xN.1597705638_qp71.jpg"
-item24 = Item.create!(title: 'Cutley set - Free',
+item24 = Item.create!(title: 'Cutlery set - Free',
                      description: 'Cutlery set. Well used but still in good condition',
                      user: ben,
                      category: home,
@@ -419,6 +419,111 @@ review1 = Review.create!(title: 'Great tent',
                 rating: 5,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item1
+                )
+
+review2 = Review.create!(title: 'Pleasure to deal with Wes - Jeff',
+                body: 'I had a last minute rush to cater my sons birthday party and these plates were ideal.',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item22
+                )
+
+review2 = Review.create!(title: 'No hassle at all - Simon.',
+                body: 'Great lender and plates came in handy',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item22
+                )
+
+review3 = Review.create!(title: 'Would recommend - Cedric',
+                body: 'Lovely plates. Made our party go with a bang',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item22
+                )
+
+review4 = Review.create!(title: 'Great borrow - Frederick',
+                body: 'Kept my grandson amused all weekend.',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item11
+                )
+
+review5 = Review.create!(title: 'No hassle at all - George Forbes-Nixon',
+                body: 'Ideal to keep one amused',
+                rating: 4,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item11
+                )
+
+review6 = Review.create!(title: 'Would recommend this item - Sarah',
+                body: 'Great selection of games',
+                rating: 3,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item11
+                )
+
+review7 = Review.create!(title: 'Super lawnmower - Digby',
+                body: 'I managed to mow my lawn in a fraction of the time it usually takes.',
+                rating: 4,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item7
+                )
+
+review8 = Review.create!(title: 'Not too impressed - George Forbes-Nixon',
+                body: 'Had to buy my own petrol for the mower!!!',
+                rating: 2,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item7
+                )
+
+review9 = Review.create!(title: 'Super item - Rodney',
+                body: 'Very fine mower. Was a godsend this weekend.',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item7
+                )
+
+review7 = Review.create!(title: 'Great stove - Dave',
+                body: 'Life saver on my camping weekend',
+                rating: 4,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item21
+                )
+
+review8 = Review.create!(title: 'Lovely little stove - Steve',
+                body: 'Pleasure from start to finish',
+                rating: 2,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item21
+                )
+
+review9 = Review.create!(title: 'Top banana - Darren',
+                body: 'I made a fantastic breakfast with this stove.',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item21
+                )
+
+review7 = Review.create!(title: 'Handy cakestand - Dylan',
+                body: 'Great for my tea party last weekend.',
+                rating: 4,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item23
+                )
+
+review8 = Review.create!(title: 'Can handle lots of cakes - Dorothy',
+                body: 'Managed to get 21 cakes on this cakestand. Amazing.',
+                rating: 2,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item23
+                )
+
+review9 = Review.create!(title: 'Great borrow - Dinah',
+                body: 'If you need a cake stand urgently this is for you..',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item23
                 )
 
 puts 'Finished!'

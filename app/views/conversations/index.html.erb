@@ -1,20 +1,50 @@
-<div class="ui segment">
- <h3>Mailbox</h3>
- <div class="ui list">
-  <div class="item">
-   <% @conversations.each do |conversation| %>
-   <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
-    <% if conversation.sender_id == current_user.id %>
-      <% recipient = User.find(conversation.recipient_id) %>
-    <% else %>
-      <% recipient = User.find(conversation.sender_id) %>
+<h3>Mailbox</h3>
+<div class="conversations">
+  <div class="users">
+    <% @conversations.each do |conversation| %>
+      <div class="user">
+        <div class="ui list">
+          <div class="item">
+            <% if conversation.sender_id == current_user.id ||
+                conversation.recipient_id == current_user.id %>
+              <% if conversation.sender_id == current_user.id %>
+                <% recipient = User.find(conversation.recipient_id) %>
+              <% else %>
+                <% recipient = User.find(conversation.sender_id) %>
+              <% end %>
+              <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-    <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
-   <% end %>
-  <% end %>
   </div>
- </div>
+
+
+  <div class="messages">
+    <% @conversations.each do |conversation| %>
+      <div class="message">
+        <div class="ui segment">
+          <% conversation.messages.each do |message| %>
+            <div class="header">
+              <strong>
+                <%= message.user.first_name %>
+              </strong>
+              <%= message.message_time %>
+            </div>
+            <div class="list">
+              <div class="item">
+                <i class="right triangle icon"></i>
+                <%= message.body %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+
 <div class="ui segment">
  <h3>All Users</h3>
   <div class="ui list">

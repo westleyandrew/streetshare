@@ -1,0 +1,27 @@
+.user {
+  width: 100%;
+  border: 1px solid red;
+  display: block;
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.message {
+  border: 1px solid blue;
+  display: block;
+  width: 100%;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.conversations {
+  display: flex;
+}

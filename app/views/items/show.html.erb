@@ -1,8 +1,7 @@
-<div class="container">
-<div class="item-container-top">
+<div class="content item-content">
+
   <%= link_to "< Back to items list", items_path,class: "links_text_pages" %>
-  <br>
-  <h4 class="text-inline h1_text_pages"><%= @item.title %></h4>
+
   <div class="top-info">
     <% unless current_user.nil? %>
       <% if @item.user_id == current_user.id %>
@@ -13,96 +12,80 @@
        <% end %>
      <% end %>
   </div>
-  <div class="photo-calendar">
-    <%= cl_image_tag @item.photo, height: 500, width: 550 %>
-    <div class="item-container-booking">
-      <!-- <button type="button" class="purple-button" data-toggle="modal" style="width: 200px;" data-target="#exampleModal">
-        Instant Book
-      </button> -->
 
-      <div>
-        <% unless @item.user == current_user %>
-          <% if humanized_money(@item.price).to_i == 0 %>
-            <%= simple_form_for @order do |f| %>
-              <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
-              <%= submit_tag 'Reserve Item with owner', class: 'btn btn-primary' %>
-            <% end %>
-          <% else %>
-            <%= simple_form_for @order do |f| %>
-            <p><strong>How long would you like to borrow the item for?</strong></p>
+  <div class="photo-calendar">
+    <%= cl_image_tag @item.photo, height: 500, width: 500 %>
+    <div class="description-container">
+      <p class="links_text_pages_p"><%= @item.address %></p>
+      <h4 class="text-inline h1_text_pages"><%= @item.title %></h4>
+      <p><%= @item.description %></p>
+      <% if humanized_money(@item.price).to_i == 0 %>
+        <p class="deposit">Item is free to collect once the owner has accepted your reservation</p>
+      <% elsif %>
+        <p class="deposit">Deposit required: <strong>£<%= humanized_money(@item.price) %></strong></p>
+      <% end %>
+
+      <% unless @item.user == current_user %>
+        <% if humanized_money(@item.price).to_i == 0 %>
+          <%= simple_form_for @order do |f| %>
             <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
-            <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <%= submit_tag 'Reserve Item with owner', class: 'btn btn-primary' %>
+          <% end %>
+        <% else %>
+          <%= simple_form_for @order do |f| %>
+            <div class="d-flex justify-content-between">
+              <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"}, label: 'Borrowing start time' %>
+              <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"}, label: 'Borrowing end time' %>
+            </div>
+            <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
             <%= submit_tag 'Reserve item & pay deposit', class: 'btn btn-primary' %>
-            <% end %>
           <% end %>
         <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 
-  <div class="description-container">
-    <p class="links_text_pages_p"><%= @item.address %></p>
-    <h4>Description</h4>
-    <p><%= @item.description %></p>
-    <% if humanized_money(@item.price).to_i == 0 %>
-      <p>Item is free to collect once the owner has accepted your reservation</p>
-    <% elsif %>
-      <p>Deposit required: £<%= humanized_money(@item.price) %></p>
-    <% end %>
-  </div>
-  <hr>
-</div>
-
-
-
-  <div
-    id="map"
-    style="width: 100%;
-    height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  ></div>
-
-  <hr>
-  <br>
   <% unless current_user.nil? %>
     <% unless @item.user_id == current_user.id %>
       <div class="container" id="item-review-list">
-       <h3 class ="h1_text_pages">Reviews</h3>
-         <% @item.reviews.each do |review| %>
-           <div class="review-title">
-             <div class="review-title">
-               <%= review.title %>
-             </div>
-           </div>
-           <div class="review-container">
-             <div class="review-rating">
-               <%= review.rating %>
-             </div>
-             <div class="review-body d-flex align-items-center">
-               "<%= review.body %>"
-             </div>
-           </div>
-         <% end %>
+        <% @item.reviews.each do |review| %>
+          <div class="review-title">
+            <div class="review-title">
+              <%= review.title %>
+            </div>
+          </div>
+          <div class="review-container">
+            <div class="review-rating">
+              <%= review.rating %>
+            </div>
+            <div class="review-body d-flex align-items-center">
+              "<%= review.body %>"
+            </div>
+          </div>
+        <% end %>
       </div>
+
       <div class="container container-review">
-       <div class="row">
-         <div class="col-sm-4 h1_text_pages form-post">
-           <h4>Add a review for the item</h4>
-           <%= simple_form_for [@item, @review], remote: true do |f| %>
-             <%= f.input :title, label: 'Please add your title and name' %>
-             <%= f.input :body, label: 'Please add your review' %>
-             <p>Rating</p>
-             <%= f.collection_radio_buttons :rating, [['1', '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
-             <p></p>
-             <%= f.submit "Submit review", class: 'btn btn-primary' %>
-           <% end %>
-         </div>
-       </div>
+        <div class="row">
+          <div class="col-sm-12 h1_text_pages form-post">
+            <h4>Add a review for the item</h4>
+            <%= simple_form_for [@item, @review], remote: true do |f| %>
+              <%= f.input :title, label: 'Please add your title and name' %>
+              <%= f.input :body, label: 'Please add your review' %>
+              <p>Rating</p>
+              <%= f.collection_radio_buttons :rating, [['1', '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
+              <p></p>
+              <%= f.submit "Submit review", class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
       </div>
     <% end %>
   <% end %>
 </div>
 
-
+<div
+  id="map"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>

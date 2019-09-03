@@ -4,8 +4,8 @@
   background-position: center;
   height: 180px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -23,11 +23,18 @@
   }
 }
 
+.remove-underline {
+  text-decoration: none !important;
+}
+
 .cards {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
   margin-bottom: 4%;
+  flex-grow: 1;
+  // float: left;
 }
 
 .card-info {
@@ -42,6 +49,21 @@
     color: #e7e713;
   }
 }
+
+.index-cards {
+  grid-template-columns: 1fr 1fr 1fr !important;
+  flex-grow: 1 !important;
+  width: 50% !important;
+}
+
+
+
+// .spacer
+// {
+//     width: 100%;
+//     height: 95px;
+//     position: fixed;
+// }
 
 .card-link {
   text-decoration: none !important;

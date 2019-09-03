@@ -2,18 +2,19 @@
   <%= image_tag 'road-icon.png', class: "logo-footer" %>
    <div>
     <% if user_signed_in? %>
-      <%= link_to "Account", user_show_path, id: "colorwh" %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, id: "colorwh" %>
+      <%= link_to "Profile  ", user_show_path, id: "colorwh-head" %>
+      <%= link_to "Help  ", user_show_path, id: "colorwh-head" %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, id: "colorwh-head" %>
     <% else %>
-     <%= link_to "Sign in", new_user_session_path, id: "colorwh" %>
-     <%= link_to "Sign up", new_user_registration_path, id: "colorwh" %>
+     <%= link_to "Sign in", new_user_session_path, id: "colorwh-head" %>
+     <%= link_to "Sign up", new_user_registration_path, id: "colorwh-head" %>
     <% end %>
   </div>
 </div>
 <div class="banner">
   <div class="container header-container">
     <h1><strong>Street Share</strong></h1>
-    <p>Easily find and borrow items that you need</p>
+    <p>The app for giving away and lending items in your local neighbourhood</p>
 
     <%= simple_form_for :search, url: items_path, method: :get, html: {class: 'form-inline'} do |f| %>
       <div class="search-form-control">

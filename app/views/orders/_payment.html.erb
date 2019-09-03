@@ -1,8 +1,12 @@
 <% item = Item.find(@order.item_id) %>
 <%= form_tag order_payments_path(@order) do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+
   <article>
-    <label class="amount"><%= item.title %>
-      <span>Deposit amount: <%= humanized_money_with_symbol(@order.amount) %></span>
+    <label>
+      <span><strong>Please note that unsuccessful reservations will be refunded by the item owner</strong></span>
+      <p></p>
+      <span><strong>Deposit amount: </strong><%= humanized_money_with_symbol(@order.amount) %></span>
     </label>
   </article>
 
@@ -14,3 +18,4 @@
     data-amount="<%= @order.amount_cents %>"
     data-currency="<%= @order.amount.currency %>"></script>
 <% end %>
+

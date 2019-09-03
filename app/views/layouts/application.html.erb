@@ -11,7 +11,7 @@
     <meta property="og:description" content="<%= meta_description %>" />
     <meta property="og:site_name" content="<%= meta_title %>" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Street Share - The great app for giving away and lending items in your local neighbourhood</title>
+    <title>Street Share - The app for giving away and lending items in your local neighbourhood</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -24,20 +24,23 @@
   </head>
   <body>
     <div class="site">
-      <div class="header-navbar">
-        <% if @home %>
-          <%= render 'shared/header' %>
-        <% else %>
-          <%= render 'shared/navbar' %>
-        <% end %>
-      </div>
+      <% if @home %>
+        <%= render 'shared/header' %>
+      <% else %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+
       <%= render 'shared/flashes' %>
       <div class="main-content">
         <%= yield %>
       </div>
-      <div class="footer">
-        <%= render 'shared/footer' %>
-      </div>
+
+      <% if controller_name == 'pages' %>
+        <div class="footer">
+          <%= render 'shared/footer' %>
+        </div>
+      <% end %>
+
       <%= javascript_include_tag 'application' %>
       <%= javascript_pack_tag 'application' %>
     </div>

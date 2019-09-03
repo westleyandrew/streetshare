@@ -1,29 +1,61 @@
-<div class="ui segment">
- <h3>Mailbox</h3>
- <div class="ui list">
-  <div class="item">
-   <% @conversations.each do |conversation| %>
-   <% if conversation.sender_id == current_user.id ||      conversation.recipient_id == current_user.id %>
-    <% if conversation.sender_id == current_user.id %>
-      <% recipient = User.find(conversation.recipient_id) %>
-    <% else %>
-      <% recipient = User.find(conversation.sender_id) %>
-    <% end %>
-    <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
-   <% end %>
-  <% end %>
+<div class="message-container">
+  <h3 class="inbox">Inbox</h3>
+  <div class="conversations">
+    <div class="users">
+      <div class="current_user">
+        <%= image_tag (current_user.photo), class: "img" %>
+        <span class="fullname-user">
+        <%= current_user.first_name %>
+        <%= current_user.last_name %>
+        </span>
+      </div>
+<!--       <input type="search" name="">
+ -->      <% @conversations.each do |conversation| %>
+        <%= link_to(toggle_conversations_path(conversation: conversation), remote: true) do  %>
+        <div class="user">
+          <div class="ui list">
+            <div class="item">
+              <% if conversation.sender_id == current_user.id ||
+                  conversation.recipient_id == current_user.id %>
+                <% if conversation.sender_id == current_user.id %>
+                  <% recipient = User.find(conversation.recipient_id) %>
+                <% else %>
+                  <% recipient = User.find(conversation.sender_id) %>
+                  <%#= raise %>
+                <% end %>
+                <%= image_tag (recipient.photo), class: "img" %>
+                <span class="recipient-fullname">
+                  <%= recipient.first_name %>
+                  <%= recipient.last_name %>
+                </span>
+                <span class="recipient-fullname">
+                <%#= recipient.updated_at %>
+                </span>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="messages">
+
+      <%= render 'conversation', conversation: @conversations.first %>
+
+    </div>
   </div>
- </div>
-</div>
-<div class="ui segment">
- <h3>All Users</h3>
-  <div class="ui list">
-   <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-     <div class="item">
-   <%= user.first_name %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
- </div>
-  <% end %>
- <% end %>
- </div>
+
+ <!--  <div class="ui segment">
+   <h3>All Users</h3>
+    <div class="ui list">
+     <%# @users.each do |user| %>
+      <%# if user.id != current_user.id %>
+       <div class="item">
+     <%#= user.first_name %> <%#= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+   </div>
+    <#% end %>
+   <#% end %>
+   </div>
+  </div> -->
 </div>

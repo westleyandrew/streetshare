@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get 'pages/user', to: 'pages#user_show', as: :user_show
 
   resources :conversations do
+    collection do
+      get 'toggle'
+    end
     resources :messages
   end
 end

@@ -1,0 +1,177 @@
+.user {
+  width: 100%;
+  // border: 1px solid red;
+  display: block;
+  padding: 10px 0 15px 0;
+  font-size: 0.9em;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+
+}
+
+.user a {
+  color: white;
+  text-decoration: none;
+
+
+}
+
+.users {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  background: rgba(81,201,108, 0.7);
+}
+
+.user:hover {
+  background: rgba(81,201,108, 0.8);
+}
+
+.message {
+  // border: 1px solid $green;
+  display: block;
+  width: 100%;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.conversations {
+  display: flex;
+}
+
+.img {
+  width: 40px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+}
+
+.img-message {
+  width: 22px;
+}
+
+.body-message {
+  background: $green;
+  color: #f5f5f5;
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 20px;
+  line-height: 130%;
+}
+
+
+.body-list {
+  margin: 20px 0px;
+  max-width: 200px;
+}
+
+.message-time {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.recipient-fullname {
+  color: white;
+}
+
+.recipient {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.sender {
+  display: flex;
+  justify-content: flex-end;
+  clear: both;
+  float: left;
+  // margin: 15px 15px 5px 15px;
+  width: 100%;
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.sender .img-message {
+  float: right;
+}
+
+.ui {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-container {
+  height: 92vh;
+  min-height: 300px;
+  max-height: 720px;
+}
+
+.segment,
+.message,
+.messages {
+  height: 100%;
+}
+
+.conversations {
+  height: 100%;
+  background: #E6EAEA;
+  -webkit-box-shadow: 7px 10px 37px -16px rgba(0,0,0,0.56);
+  -moz-box-shadow: 7px 10px 37px -16px rgba(0,0,0,0.56);
+  box-shadow: 7px 10px 37px -16px rgba(0,0,0,0.56);
+
+}
+
+.segment {
+  overflow: scroll;
+  height: 91.5% !important;
+}
+
+.message-form {
+  width: 100%;
+}
+
+.btn-message {
+  cursor: pointer;
+  padding: 0 20px;
+  color: white;
+  background: $green;
+}
+
+.sender .body-message {
+  background: #f5f5f5;
+  color:  #2c3e50;
+}
+
+.message-time {
+  color: rgba(44,62,80,0.7)
+}
+
+.current_user {
+  margin: 15px;
+  color: white;
+}
+
+.current_user img {
+  border: 2px solid white;
+  width: 50px;
+}
+
+.current_user {
+  padding-bottom: 15px;
+  border-bottom: 1px solid white;
+}
+
+.fullname-user {
+  margin-left: 10px;
+  position: absolute;
+}
+
+.inbox {
+  margin: 20px 0;
+}

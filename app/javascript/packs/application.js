@@ -8,6 +8,8 @@ import 'sweetalert2/dist/sweetalert2.min.css'
 
 import "../plugins/flatpickr"
 
+import { initStarRating } from '../plugins/init_star_rating';
+
 import { initSweetalert } from '../plugins/init_sweetalert';
 
 initAutocomplete();
@@ -15,6 +17,8 @@ initAutocomplete();
 initMapbox();
 
 initSweetalert();
+
+initStarRating();
 
 // $(".user-item-parent").on("click", function() {
 //   const thisTarget = $(this).next(".user-item-container");

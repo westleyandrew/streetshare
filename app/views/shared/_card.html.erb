@@ -1,4 +1,4 @@
-<% order_class="card-product " %>
+<% order_class="card-category" %>
   <% if order_div %>
     <% if order.state === "approved" %>
       <% order_class << "lgt-green" %>
@@ -6,20 +6,25 @@
       <% order_class << "lgt-yellow" %>
     <% end %>
   <% end %>
-<div class="<%= order_class %>">
-  <img src=<%= cl_image_path item_var.photo %> />
-  <div class="card-product-infos">
-    <!-- if card is an item card -->
-    <% unless order_div %>
-      <h2><%= item.title %></h2>
-      <p><%= item.description %></p>
-      <p>user: <%= item.user_id %> (remove for prod)</p>
-    <!-- if card is an order card -->
-    <% else %>
-      <h2>Item: <%= order.item_id %></h2>
-      <p>User: <%= user.email %></p>
-      <p>Status: <%= order.state %></p>
-      <p>Amount: <%= humanized_money_with_symbol(order.amount) %></p>
+
+  <!-- if card is an item card -->
+  <% unless order_div %>
+    <%= link_to item_path(item), :action => 'go' do %>
+      <div class="<%= order_class%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item_var.photo %>')">
+        <span style="font-size: 16px; margin: 2%;"><%= item.title.split(" - ")[1] %></span>
+      </div>
+      <div class="card-info">
+        <span><%= item.title.split(" - ")[0] %></span>
+      </div>
     <% end %>
-  </div>
-</div>
+  <!-- if card is an order card -->
+  <% else %>
+    <%= link_to order_path(order), :action => 'go' do %>
+      <div class="<%= order_class %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item_var.photo %>')">
+        <span style="font-size: 16px; margin: 2%;"><%= order.item.title.split(" - ")[1] %></span>
+      </div>
+      <div class="card-info">
+        <span><%= order.item.title.split(" - ")[0] %></span>
+      </div>
+    <% end %>
+  <% end %>

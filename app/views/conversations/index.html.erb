@@ -12,6 +12,7 @@
               <% else %>
                 <% recipient = User.find(conversation.sender_id) %>
               <% end %>
+              <%= image_tag (recipient.photo), class: "img" %>
               <%= link_to recipient.first_name,   conversation_messages_path(conversation)%>
             <% end %>
           </div>

@@ -46,7 +46,6 @@
   width: 40px;
   border-radius: 50%;
   float: left;
-  margin-right: 10px;
 }
 
 .img-message {
@@ -64,15 +63,52 @@
 
 
 .body-list {
-  margin: 20px;
+  margin: 20px 0px;
   max-width: 200px;
 }
 
 .message-time {
   font-size: 12px;
-  float: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .recipient-fullname {
   color: white;
+}
+
+.recipient {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+
+.sender {
+  display: flex;
+  justify-content: flex-end;
+  clear: both;
+  float: left;
+  // margin: 15px 15px 5px 15px;
+  width: 100%;
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.sender .img-message {
+  float: right;
+}
+
+.ui {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-container {
+  width: 95%;
+  min-width: 360px;
+  max-width: 1000px;
+  height: 92vh;
+  min-height: 300px;
+  max-height: 720px;
+  background: #E6EAEA;
 }

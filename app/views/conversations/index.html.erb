@@ -1,84 +1,103 @@
-<h3>Mailbox</h3>
-<div class="conversations">
-  <div class="users">
-    <% @conversations.each do |conversation| %>
-      <div class="user">
-        <div class="ui list">
-          <div class="item">
-            <% if conversation.sender_id == current_user.id ||
-                conversation.recipient_id == current_user.id %>
-              <% if conversation.sender_id == current_user.id %>
-                <% recipient = User.find(conversation.recipient_id) %>
-              <% else %>
-                <% recipient = User.find(conversation.sender_id) %>
-                <%#= raise %>
+<div class="message-container">
+  <h3>Mailbox</h3>
+  <div class="conversations">
+    <div class="users">
+      <% @conversations.each do |conversation| %>
+        <div class="user">
+          <div class="ui list">
+            <div class="item">
+              <% if conversation.sender_id == current_user.id ||
+                  conversation.recipient_id == current_user.id %>
+                <% if conversation.sender_id == current_user.id %>
+                  <% recipient = User.find(conversation.recipient_id) %>
+                <% else %>
+                  <% recipient = User.find(conversation.sender_id) %>
+                  <%#= raise %>
+                <% end %>
+                <%= image_tag (recipient.photo), class: "img" %>
+                <span class="recipient-fullname">
+                  <%= recipient.first_name %>
+                  <%= recipient.last_name %>
+                </span>
               <% end %>
-              <%= image_tag (recipient.photo), class: "img" %>
-              <span class="recipient-fullname">
-                <%= recipient.first_name %>
-                <%= recipient.last_name %>
-              </span>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="messages">
+      <% @conversations.each do |conversation| %>
+        <div class="message">
+          <div class="ui segment">
+            <% conversation.messages.each do |message| %>
+              <% if message.user == conversation.sender %>
+                <% message_user = 'sender' %>
+                <div class="<%= message_user %>">
+                  <div class="list body-list">
+                    <div class="item body-message">
+                      <i class="right triangle icon"></i>
+                      <%= message.body %>
+                    </div>
+                    <div class="message-time">
+                      <%= message.message_time %>
+                    </div>
+                  </div>
+                  <div class="header">
+                    <strong>
+                      <%= image_tag (message.user.photo), class: "img img-message" %>
+                      <%#= message.user.first_name %>
+                    </strong>
+                  </div>
+                </div>
+              <% else message.user == conversation.recipient %>
+                <% message_user = 'recipient' %>
+                <div class="<%= message_user %>">
+                  <div class="header">
+                    <strong>
+                      <%= image_tag (message.user.photo), class: "img img-message" %>
+                      <%#= message.user.first_name %>
+                    </strong>
+                  </div>
+                  <div class="list body-list">
+                    <div class="item body-message">
+                      <i class="right triangle icon"></i>
+                      <%= message.body %>
+                    </div>
+                    <div class="message-time">
+                      <%= message.message_time %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div>
+            <%= form_for [conversation, Message.new], html: {class: "ui reply form"} do |f| %>
+              <div class="field">
+                <%= f.text_area :body, class: "form-control", placeholder: "Write your message..."%>
+              </div>
+              <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+              <div>
+                <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
+              </div>
             <% end %>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
-  <div class="messages">
-    <% @conversations.each do |conversation| %>
-      <div class="message">
-        <div class="ui segment">
-          <% conversation.messages.each do |message| %>
-            <% if message.user == conversation.sender %>
-            <% message_user = 'sender' %>
-            <% elsif message.user == conversation.recipient %>
-            <% message_user = 'recipient' %>
-            <% end %>
-            <div class="<%= message_user %>">
-              <div class="header">
-                <strong>
-                  <%= image_tag (message.user.photo), class: "img img-message" %>
-                  <%#= message.user.first_name %>
-                </strong>
-              </div>
-              <div class="list body-list">
-                <div class="item body-message">
-                  <i class="right triangle icon"></i>
-                  <%= message.body %>
-                </div>
-                <div class="message-time">
-                  <%= message.message_time %>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-        <div>
-          <%= form_for [conversation, Message.new], html: {class: "ui reply form"} do |f| %>
-            <div class="field">
-              <%= f.text_area :body, class: "form-control" %>
-            </div>
-            <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-            <div>
-              <%= f.submit "Add Reply", class: "ui blue labeled submit icon button" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
+  <div class="ui segment">
+   <h3>All Users</h3>
+    <div class="ui list">
+     <% @users.each do |user| %>
+      <% if user.id != current_user.id %>
+       <div class="item">
+     <%= user.first_name %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+   </div>
     <% end %>
+   <% end %>
+   </div>
   </div>
-</div>
-
-<div class="ui segment">
- <h3>All Users</h3>
-  <div class="ui list">
-   <% @users.each do |user| %>
-    <% if user.id != current_user.id %>
-     <div class="item">
-   <%= user.first_name %> <%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
- </div>
-  <% end %>
- <% end %>
- </div>
 </div>

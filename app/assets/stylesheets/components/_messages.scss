@@ -125,9 +125,9 @@
 
 .segment {
   overflow: scroll;
+  height: 91.5% !important;
 }
 
 .message-form {
-  display: flex;
-  flex-direction: row;
+  width: 100%;
 }

@@ -5,7 +5,6 @@
   <div class="photo-calendar">
     <%= cl_image_tag @item.photo, height: 500, width: 500 %>
     <div class="description-container">
-      <p class="links_text_pages_p"><%= @item.address %></p>
       <h4 class="text-inline h1_text_pages"><%= @item.title %></h4>
 
       <div class="actions-options">
@@ -18,7 +17,8 @@
            <% end %>
          <% end %>
       </div>
-
+      <% item_owner = User.find(@item.user_id) %>
+      <p>Item owner: <%= item_owner.first_name %> <%= item_owner.last_name %></p>
       <p><%= @item.description %></p>
       <% if humanized_money(@item.price).to_i == 0 %>
         <p class="deposit">Item is free to collect once the owner has accepted your reservation</p>

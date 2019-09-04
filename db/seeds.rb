@@ -94,10 +94,10 @@ harry = User.create!(email: "harry@gmail.com",
                   )
 
 ali = User.create!(email: "ali@gmail.com",
-                  address: 'Merritt Road, Brockley, London',
+                  address: 'Peckham Rye Lane, London',
                   password: "123456",
-                  first_name: "Muahmmed",
-                  last_name: "Ali",
+                  first_name: "Ali",
+                  last_name: "Smith",
                   photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Hawkeye-icon.png"
                   )
 
@@ -346,7 +346,7 @@ url = "https://www.royalalbert.co.uk/media/catalog/product/cache/10/image/1200x1
 item23 = Item.create!(title: 'Cake Stand - Borrow',
                      description: 'Ideal for occasions when you need a cake stand',
                      user: wes,
-                     price: 50,
+                     price: 15,
                      category: catering,
                       )
 item23.remote_photo_url = url
@@ -414,6 +414,50 @@ item30.remote_photo_url = url
 item30.save
 item30_id = item30.id
 
+
+url = "https://i.ebayimg.com/images/g/-HgAAOSwtkNdaRY~/s-l1600.jpg"
+item31 = Item.create!(title: 'Pram and Carrycot - Free',
+                     description: 'Our child has now outgrown this pram so free to a good home. In good condition.',
+                     user: hugo,
+                     category: home,
+                      )
+item31.remote_photo_url = url
+item31.save
+item31_id = item31.id
+
+
+url = "https://i.ebayimg.com/images/g/5IwAAOSw2QxcdVqJ/s-l1600.jpg"
+item32 = Item.create!(title: '4 Burner Barbeque - Borrow',
+                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
+                     user: ben,
+                     price: 50,
+                     category: garden,
+                      )
+item32.remote_photo_url = url
+item32.save
+item32_id = item32.id
+
+url = "https://i.ebayimg.com/images/g/u48AAOSwuOpbZc8Y/s-l1600.jpg"
+item33 = Item.create!(title: 'CosmoGrill Barbeque - Borrow',
+                     description: 'CosmoGrill Barbecue BBQ Outdoor Charcoal Smoker Portable Grill Garden.',
+                     user: jof,
+                     price: 60,
+                     category: garden,
+                      )
+item33.remote_photo_url = url
+item33.save
+item33_id = item33.id
+
+url = "https://i.ebayimg.com/images/g/1fIAAOSwTSldFimq/s-l1600.jpg"
+item34 = Item.create!(title: 'Mini Barbeque - Borrow',
+                     description: ' Volcann Mini Stainless Steel Flat Pack BBQ / Grill / Firepit / Portable',
+                     user: ali,
+                     price: 40,
+                     category: garden,
+                      )
+item34.remote_photo_url = url
+item34.save
+item34_id = item34.id
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',

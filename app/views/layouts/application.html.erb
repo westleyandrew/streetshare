@@ -35,7 +35,7 @@
         <%= yield %>
       </div>
 
-      <% if controller_name == 'pages' %>
+      <% if @home %>
         <div class="footer">
           <%= render 'shared/footer' %>
         </div>

@@ -115,6 +115,11 @@
     }
   }
 
+  .review-title {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+
   .review-container {
     display: flex;
     background-color: #E8E8E8;
@@ -138,3 +143,23 @@
     width: 95%;
   }
 }
+
+.grey-btn {
+  color: $dark-gray !important;
+  border: 1px solid #51C96C;
+  font-family: inherit;
+  color: white;
+  padding: 8px 23px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: 0.3s;
+  border: 1px solid #51C96C;
+  margin-bottom: 24px;
+  opacity: 1;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+

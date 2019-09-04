@@ -114,7 +114,7 @@ item1.save
 item1_id = item1.id
 
 url = "https://i.ebayimg.com/images/g/1oMAAOSwAANY5deU/s-l1600.jpg"
-item2 = Item.create!(title: 'Jump Trampoline - Borrow',
+item2 = Item.create!(title: 'Trampoline - Borrow',
                      description: 'Rebo 12FT Base Jump Trampoline With Halo II Enclosure. Tool Kit and full Instructions. Only for domestic use. £25 Deposit',
                      user: sam,
                      price: 25,
@@ -158,7 +158,7 @@ item5.save
 item5_id = item5.id
 
 url = "https://i.ebayimg.com/images/g/p-wAAOSwRKldbq0M/s-l1600.jpg"
-item6 = Item.create!(title: 'NINTENDO GAME - Free',
+item6 = Item.create!(title: 'Nintendo Game - Free',
                      description: 'Zelda A Link To The Past Complete Boxed CIB Super Nintendo SNES RARE. COMES WITH BOX PROTECTOR IN PERFECT WORKING ORDER',
                      user: ben,
                      category: electronics,
@@ -189,7 +189,7 @@ item8.save
 item8_id = item8.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/516HkK-UxEL.jpg"
+url = "https://i.ebayimg.com/images/g/vXYAAOSwFPpdFgag/s-l1600.jpg"
 item9 = Item.create!(title: 'Deck chair - Borrow',
                      description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
                      user: hugo,
@@ -200,7 +200,7 @@ item9.remote_photo_url = url
 item9.save
 item9_id = item9.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/61gmnonBaKL._SL1000_.jpg"
+url = "https://i.ebayimg.com/images/g/7gAAAOSwu~FdZVzn/s-l1600.jpg"
 item10 = Item.create!(title: 'Television - Borrow',
                      description: 'Panasonic TX-32E302B 720p HD Ready 32-Inch LED TV with Freeview HD - Black (2018 Model) ',
                      user: hugo,
@@ -212,7 +212,7 @@ item10.save
 item10_id = item10.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/41ZWZ795YML.jpg"
+url = "https://i.ebayimg.com/images/g/Z2wAAOSwl-hdX~U7/s-l1600.jpg"
 item11 = Item.create!(title: 'GBA with games - Borrow',
                      description: 'Nintendo Clear Blue Console. Comes with Super Mario and Legend of Zelda.',
                      user: wes,
@@ -224,7 +224,7 @@ item11.save
 item11_id = item11.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/71l6HOCEnWL._SL1500_.jpg"
+url = "https://i.ebayimg.com/images/g/MkUAAOSwq05da9kr/s-l1600.jpg"
 item12 = Item.create!(title: 'Cassette Player - Free',
                      description: 'ACE Retro Cassette Radio',
                      user: harry,
@@ -276,7 +276,7 @@ item16.save
 item16_id = item16.id
 
 
-url = "https://www.silvermushroom.com/wp-content/uploads/2018/03/0025.407_1-e1453828659601.jpg"
+url = "https://i.ebayimg.com/images/g/F3oAAOSwyWZZQpjK/s-l1600.jpg"
 item17 = Item.create!(title: 'Drinks dispenser - Borrow',
                      description: 'Kilner Vintage Drinks Dispenser – 5 Litre.',
                      user: harry,
@@ -287,9 +287,9 @@ item17.remote_photo_url = url
 item17.save
 item17_id = item17.id
 
-url = "https://www.oldbootsofas.com/images/products/zoom/1406808166-22760200.jpg"
+url = "https://i.ebayimg.com/images/g/62gAAOSwIXZdWtt2/s-l1600.jpg"
 item18 = Item.create!(title: 'Old sofa - Free',
-                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+                     description: 'Corner sofa dfs brown leather and fawn colour available for collection. It is very large so you will need a van.',
                      user: jeff,
                      category: furniture,
                       )
@@ -330,7 +330,7 @@ item21.remote_photo_url = url
 item21.save
 item21_id = item21.id
 
-url = "https://www.pipii.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/o/colourful-creatures-party-paper-plates.jpg"
+url = "https://i.ebayimg.com/images/g/RnoAAOSwBrVa1Ook/s-l1600.jpg"
 item22 = Item.create!(title: 'Party Plates - Borrow',
                      description: 'Ideal for childrens parties',
                      user: wes,
@@ -341,7 +341,7 @@ item22.remote_photo_url = url
 item22.save
 item22_id = item22.id
 
-url = "https://www.royalalbert.co.uk/media/catalog/product/cache/10/image/1200x1200/9df78eab33525d08d6e5fb8d27136e95/r/o/royal-albert-old-country-roses-cake-stand-798901569039.jpg"
+url = "https://i.ebayimg.com/images/g/m98AAOSw45xcsFeV/s-l1600.jpg"
 item23 = Item.create!(title: 'Cake Stand - Borrow',
                      description: 'Ideal for occasions when you need a cake stand',
                      user: wes,
@@ -530,46 +530,53 @@ review9 = Review.create!(title: 'Super item - Rodney',
                 item: item7
                 )
 
-review7 = Review.create!(title: 'Great stove - Dave',
+review10 = Review.create!(title: 'Great stove - Dave',
                 body: 'Life saver on my camping weekend',
                 rating: 4,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item21
                 )
 
-review8 = Review.create!(title: 'Lovely little stove - Steve',
+review11 = Review.create!(title: 'Lovely little stove - Steve',
                 body: 'Pleasure from start to finish',
                 rating: 2,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item21
                 )
 
-review9 = Review.create!(title: 'Top banana - Darren',
+review12 = Review.create!(title: 'Top banana - Darren',
                 body: 'I made a fantastic breakfast with this stove.',
                 rating: 5,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item21
                 )
 
-review7 = Review.create!(title: 'Handy cakestand - Dylan',
+review13 = Review.create!(title: 'Handy cakestand - Dylan',
                 body: 'Great for my tea party last weekend.',
                 rating: 4,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item23
                 )
 
-review8 = Review.create!(title: 'Can handle lots of cakes - Dorothy',
+review14 = Review.create!(title: 'Can handle lots of cakes - Dorothy',
                 body: 'Managed to get 21 cakes on this cakestand. Amazing.',
                 rating: 2,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item23
                 )
 
-review9 = Review.create!(title: 'Great borrow - Dinah',
+review15 = Review.create!(title: 'Great borrow - Dinah',
                 body: 'If you need a cake stand urgently this is for you..',
                 rating: 5,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item23
+                )
+
+review16 = Review.create!(title: 'Very helpful owner - Dinah',
+                body: 'This barbeque was a great help to us last weekend when we held a party for family and friends. Would recommend',
+                rating: 5,
+                date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
+                item: item32
                 )
 
 puts 'Finished!'

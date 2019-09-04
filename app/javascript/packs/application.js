@@ -76,7 +76,7 @@ $('.user-display').on('click', function() {
 
 $('.user-home').on('mouseup', function() {
   if ($('.user-home').hasClass('ss-active') === false) {
-    console.log('user-home selector');
+    // console.log('user-home selector');
     $('.user-display').removeClass('ss-active');
     $('.user-home, .user-items-btn').addClass('ss-active');
     $('.user-lend').removeClass('ss-active');
@@ -90,7 +90,7 @@ $('.user-home').on('mouseup', function() {
 
 $('.user-lend').on('mouseup', function() {
   if ($('.user-lend').hasClass('ss-active') === false) {
-    console.log('user-lend selector');
+    // console.log('user-lend selector');
     $('.user-display').removeClass('ss-active');
     $('.user-lend, .other-user-requests-btn').addClass('ss-active');
     $('.user-home').removeClass('ss-active');

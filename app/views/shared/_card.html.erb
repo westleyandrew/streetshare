@@ -25,7 +25,11 @@
       </div>
       <div class="card-info">
         <span><%= order.item.title.split(" - ")[0] %></span>
-        <span style="font-size: 12px;"><%= order.start_time.to_s(:rfc822)[6..16] %> - <%= order.end_time.to_s(:rfc822)[6..16] %></span>
+        <span style="font-size: 12px;">
+          <% if order.start_time != nil %>
+            <%= order.start_time.to_s(:rfc822)[6..16] %> - <%= order.end_time.to_s(:rfc822)[6..16] %>
+          <% end %>
+        </span>
       </div>
     <% end %>
   <% end %>

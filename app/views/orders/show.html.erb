@@ -10,6 +10,15 @@
             <li><p><strong>Request status:</strong> <%= @order.state %></p></li>
             <li><p><strong>Item:</strong> <%= item.title %></p></li>
             <li><p><strong>Requested by:</strong> <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)</p></li>
+            <li>
+              <p>
+                <% if @order.start_time != nil %>
+                  <strong>Dates requested: </strong> <%= @order.start_time.to_s(:rfc822)[6..16] %> - <%= @order.end_time.to_s(:rfc822)[6..16] %>
+                <% else %>
+                  <strong>Next steps: </strong>Once the item owner accepts the order please arrange a convenient collection time
+                <% end %>
+              </p>
+            </li>
             <br>
             <% if (@order.amount_cents != 0) && (@order.state == 'pending') %>
               <%= render 'payment' %>

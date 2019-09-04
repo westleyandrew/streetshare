@@ -1,20 +1,17 @@
 .item-btn {
-  color: white !important;
+  // color: white !important;
+  width: 100%;
   :hover {
   text-decoration: none;
   }
 }
 
-.item-li {
-  list-style: none;
-  border: 2px solid #62cd7a;
-  padding: 10px;
-  margin:5px;
-  width: 50%;
-  border-radius: 10px;
-  span {
-    float: right;
-  }
+.edit-btn {
+  background-color: #FCE487;
+}
+
+.delete-btn {
+  background-color: #ED5E68;
 }
 
 .hide {

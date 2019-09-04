@@ -34,6 +34,15 @@
       font-size: 14px;
       font-style: italic;
     }
+
+    .actions-options {
+      font-size: 12px;
+      margin-bottom: 16px;
+
+      a:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   .description-container {

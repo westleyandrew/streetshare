@@ -2,9 +2,9 @@
   <%= image_tag 'road-icon.png', class: "logo-footer" %>
    <div>
     <% if user_signed_in? %>
-      <%= link_to "Profile  ", user_show_path, id: "colorwh-head" %>
-      <%= link_to "Help  ", user_show_path, id: "colorwh-head" %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, id: "colorwh-head" %>
+      <%= link_to "Profile  ", user_show_path, id: "colorwh-head", class: 'menu-item' %>
+      <%= link_to "Help  ", user_show_path, id: "colorwh-head", class: 'menu-item' %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, id: "colorwh-head", class: 'menu-item' %>
     <% else %>
      <%= link_to "Sign in", new_user_session_path, id: "colorwh-head" %>
      <%= link_to "Sign up", new_user_registration_path, id: "colorwh-head" %>

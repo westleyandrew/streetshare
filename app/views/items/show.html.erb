@@ -2,22 +2,23 @@
 
   <%= link_to "< Back to items list", items_path,class: "links_text_pages" %>
 
-  <div class="top-info">
-    <% unless current_user.nil? %>
-      <% if @item.user_id == current_user.id %>
-        <%= link_to "Edit item", edit_item_path %> |
-        <%= link_to "Delete item", item_path(@item),
-         method: :delete,
-         data: { confirm: "Are you sure?" } %>
-       <% end %>
-     <% end %>
-  </div>
-
   <div class="photo-calendar">
     <%= cl_image_tag @item.photo, height: 500, width: 500 %>
     <div class="description-container">
       <p class="links_text_pages_p"><%= @item.address %></p>
       <h4 class="text-inline h1_text_pages"><%= @item.title %></h4>
+
+      <div class="actions-options">
+        <% unless current_user.nil? %>
+          <% if @item.user_id == current_user.id %>
+            <%= link_to "Edit item", edit_item_path %> |
+            <%= link_to "Delete item", item_path(@item),
+             method: :delete,
+             data: { confirm: "Are you sure?" } %>
+           <% end %>
+         <% end %>
+      </div>
+
       <p><%= @item.description %></p>
       <% if humanized_money(@item.price).to_i == 0 %>
         <p class="deposit">Item is free to collect once the owner has accepted your reservation</p>

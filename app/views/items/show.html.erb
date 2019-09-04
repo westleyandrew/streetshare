@@ -32,7 +32,7 @@
             <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
             <%= submit_tag 'Reserve Item with owner', class: 'btn btn-primary' %>
             <% unless current_user.nil? %>
-              <%= link_to "Message owner",conversations_path(sender_id: current_user.id, recipient_id: @item.user_id), method: :post, class: 'btn btn-primary' %>
+              <%= link_to "Message owner",conversations_path(sender_id: current_user.id, recipient_id: @item.user_id), method: :post, class: 'btn grey-btn' %>
             <% end %>
           <% end %>
         <% else %>
@@ -44,7 +44,7 @@
             <%= f.input :item_id, as: :hidden, input_html: { value: @item.id } %>
             <%= submit_tag 'Reserve item & pay deposit', class: 'btn btn-primary' %>
             <% unless current_user.nil? %>
-              <%= link_to "Message owner",conversations_path(sender_id: current_user.id, recipient_id: @item.user_id), method: :post, class: 'btn btn-primary' %>
+              <%= link_to "Message owner",conversations_path(sender_id: current_user.id, recipient_id: @item.user_id), method: :post, class: 'btn grey-btn' %>
             <% end %>
           <% end %>
         <% end %>

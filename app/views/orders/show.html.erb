@@ -14,6 +14,8 @@
               <p>
                 <% if @order.start_time != nil %>
                   <strong>Dates requested: </strong> <%= @order.start_time.to_s(:rfc822)[6..16] %> - <%= @order.end_time.to_s(:rfc822)[6..16] %>
+                <% else %>
+                  <strong>Next steps: </strong>Once the item owner accepts the order please arrange a convenient collection time
                 <% end %>
               </p>
             </li>

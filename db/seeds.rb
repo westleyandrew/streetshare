@@ -107,30 +107,30 @@ item1 = Item.create!(title: 'Tent - Borrow',
                      description: 'Can sleep 6 comfortably, or easily sleeps 4 with a large space for a living room area in case the weather turns a bit nasty. Deposit is £20',
                      user: sam,
                      price: 20,
-                     category: travel
+                     category: travel,
                       )
 item1.remote_photo_url = url
 item1.save
 item1_id = item1.id
 
-url = "https://media.rs-online.com/t_large/F8296568-01.jpg"
-item2 = Item.create!(title: 'Toolkit - Borrow',
-                     description: '141 PIECE PRO COMPLETE TOOL KIT + CASE Screwdriver Socket Hammer Tool Set. £25 Deposit',
+url = "https://i.ebayimg.com/images/g/1oMAAOSwAANY5deU/s-l1600.jpg"
+item2 = Item.create!(title: 'Jump Trampoline - Borrow',
+                     description: 'Rebo 12FT Base Jump Trampoline With Halo II Enclosure. Tool Kit and full Instructions. Only for domestic use. £25 Deposit',
                      user: sam,
                      price: 25,
-                     category: tools
+                     category: garden,
                       )
 item2.remote_photo_url = url
 item2.save
 item2_id = item2.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/8110dlQ6L6L._SL1500_.jpg"
-item3 = Item.create!(title: 'Camping cart - Borrow',
-                     description: 'VonHaus Folding Camping Cart with Lining - 4 Wheeled Collapsible Festival Trolley, Portable Garden & DIY Waste Wagon – 70KG Capacity. £30 Deposit',
+url = "https://i.ebayimg.com/images/g/I7oAAOSwxL1cZv0z/s-l1600.jpg"
+item3 = Item.create!(title: 'Garden Furniture - Borrow',
+                     description: 'The 8-piece outdoor furniture set from Kingfisher Outdoor Living is stylish, contemporary, practical and will look great in any garden or patio setting. It features six preassembled, folding chairs, an easy to assemble table with tempered glass table top and umbrella to protect from the sun. £30 Deposit',
                      user: sam,
                      price: 30,
-                     category: travel,
+                     category: garden,
                       )
 item3.remote_photo_url = url
 item3.save
@@ -157,11 +157,11 @@ item5.remote_photo_url = url
 item5.save
 item5_id = item5.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/51rUcCASRfL._SX392_BO1,204,203,200_.jpg"
-item6 = Item.create!(title: 'Childrens Encyclopedia - Free',
-                     description: 'The New Childrens Encyclopedia: Packed with Thousands of Facts, Stats, and Illustrations',
+url = "https://i.ebayimg.com/images/g/p-wAAOSwRKldbq0M/s-l1600.jpg"
+item6 = Item.create!(title: 'NINTENDO GAME - Free',
+                     description: 'Zelda A Link To The Past Complete Boxed CIB Super Nintendo SNES RARE. COMES WITH BOX PROTECTOR IN PERFECT WORKING ORDER',
                      user: ben,
-                     category: books,
+                     category: electronics,
                       )
 item6.remote_photo_url = url
 item6.save
@@ -178,12 +178,11 @@ item7.remote_photo_url = url
 item7.save
 item7_id = item7.id
 
-url = "https://media.4rgos.it/i/Argos/6064363_R_Z001A?w=750&h=440&qlt=70"
-item8 = Item.create!(title: 'Spade - Borrow',
-                     description: 'Spear & Jackson 4190NB Elements Digging Spade, Brown',
+url = "https://i.ebayimg.com/images/g/9kgAAOSwg65bvESd/s-l1600.jpg"
+item8 = Item.create!(title: 'Single Bed - Free',
+                     description: '3FT Single Bed Solid Pine Wooden Bed Frame & Mattress Bedroom Furniture. It is a very good quality bed.',
                      user: hugo,
-                     price: 10,
-                     category: garden,
+                     category: home,
                       )
 item8.remote_photo_url = url
 item8.save
@@ -320,12 +319,12 @@ item20.remote_photo_url = url
 item20.save
 item20_id = item20.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/61oen7829eL._SL1000_.jpg"
-item21 = Item.create!(title: 'Backpacking Stove - Borrow',
-                     description: 'Made of strong stainless steel, this camping stove is built to last long even under heavy weight or high heat.',
+url = "https://i.ebayimg.com/images/g/HUsAAOSwohVcNtp8/s-l1600.jpg"
+item21 = Item.create!(title: 'Garden Bench - Borrow',
+                     description: '2-in-1 Patio Swing Chair 3 Seater Hammock Cushion Bed Tilt Canopy Garden Bench. Quickly and easily converts to a comfortable bed.',
                      user: wes,
                      price: 30,
-                     category: travel,
+                     category: garden,
                       )
 item21.remote_photo_url = url
 item21.save
@@ -383,11 +382,11 @@ item27.remote_photo_url = url
 item27.save
 item27_id = item27.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/51UaD6gfCNL._SY355_.jpg"
-item28 = Item.create!(title: 'Hamster Cage - Free',
-                     description: 'Unfortunately or hamster has passed away but we would like to pass on this wonderful cage.',
+url = "https://i.ebayimg.com/images/g/jMEAAOSwwAldb6VY/s-l1600.jpg"
+item28 = Item.create!(title: 'Baby Boy Clothes - Free',
+                     description: 'Baby Boy Clothes Bundle 6-9 Months. Good clean condition, from a pet and smoke free home.',
                      user: wes,
-                     category: pets,
+                     category: clothing,
                       )
 item28.remote_photo_url = url
 item28.save
@@ -403,12 +402,13 @@ item29.remote_photo_url = url
 item29.save
 item29_id = item29.id
 
-url = "https://www.4home.co.za/images/stories/virtuemart/product/ryobi-1800w-electric-saw-350mm-(cs-1835)4.jpg"
-item30 = Item.create!(title: 'Electric Saw - Borrow',
-                     description: 'Large sofa available for collection. It is very large so you will need a van.',
+
+url = "https://i.ebayimg.com/images/g/zQsAAOSwf-5db4pT/s-l1600.jpg"
+item30 = Item.create!(title: 'Electric Piano - Borrow',
+                     description: 'Yamaha P-45 Digital Electric Piano. Also includes bag',
                      user: hugo,
-                     price: 60,
-                     category: tools,
+                     price: 40,
+                     category: electronics,
                       )
 item30.remote_photo_url = url
 item30.save

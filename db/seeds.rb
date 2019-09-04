@@ -346,7 +346,7 @@ url = "https://www.royalalbert.co.uk/media/catalog/product/cache/10/image/1200x1
 item23 = Item.create!(title: 'Cake Stand - Borrow',
                      description: 'Ideal for occasions when you need a cake stand',
                      user: wes,
-                     price: 50,
+                     price: 15,
                      category: catering,
                       )
 item23.remote_photo_url = url
@@ -414,6 +414,28 @@ item30.remote_photo_url = url
 item30.save
 item30_id = item30.id
 
+
+url = "https://i.ebayimg.com/images/g/-HgAAOSwtkNdaRY~/s-l1600.jpg"
+item31 = Item.create!(title: 'Pram and Carrycot - Free',
+                     description: 'Our child has now outgrown this pram so free to a good home. In good condition.',
+                     user: hugo,
+                     category: home,
+                      )
+item31.remote_photo_url = url
+item31.save
+item31_id = item31.id
+
+
+url = "https://i.ebayimg.com/images/g/dzQAAOSwOZ1dbS9s/s-l1600.jpg"
+item32 = Item.create!(title: '4 Burner Barbecue - Borrow',
+                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
+                     user: wes,
+                     price: 50,
+                     category: garden,
+                      )
+item32.remote_photo_url = url
+item32.save
+item32_id = item32.id
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',

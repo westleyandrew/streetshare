@@ -3,7 +3,7 @@ class ConversationsController < ApplicationController
 
   def index
     @users = User.all
-    @conversations = Conversation.all
+    @conversations = Conversation.where(sender: current_user).or(Conversation.where(recipient: current_user))
   end
 
   def create
@@ -12,7 +12,7 @@ class ConversationsController < ApplicationController
     else
       @conversation = Conversation.create!(conversation_params)
     end
-    redirect_to conversation_messages_path(@conversation)
+    redirect_to conversations_path(conversation_id: @conversation.id)
   end
 
   def toggle

@@ -573,7 +573,7 @@ review15 = Review.create!(title: 'Great borrow - Dinah',
                 )
 
 review16 = Review.create!(title: 'Very helpful owner - Dinah',
-                body: 'This barbeque was a great help to us weekend when we held a party for family and friends. Would recommend',
+                body: 'This barbeque was a great help to us last weekend when we held a party for family and friends. Would recommend',
                 rating: 5,
                 date: DateTime.strptime("09/01/2018 19:00", "%m/%d/%Y %H:%M"),
                 item: item32

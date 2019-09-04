@@ -1,17 +1,17 @@
 <% order_class="card-category" %>
-  <% if order_div %>
-    <% if order.state === "approved" %>
-      <% order_class << "lgt-green" %>
-    <% elsif order.state === "pending" %>
-      <% order_class << "lgt-yellow" %>
-    <% end %>
-  <% end %>
+  <%# if order_div %>
+    <%# if order.state === "approved" %>
+      <%# order_class << " lgt-green" %>
+    <%# elsif order.state === "pending" %>
+      <%# order_class << " lgt-yellow" %>
+    <%# end %>
+  <%# end %>
 
   <!-- if card is an item card -->
   <% unless order_div %>
     <%= link_to item_path(item), :action => 'go' do %>
       <div class="<%= order_class%>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item_var.photo %>')">
-        <span style="font-size: 16px; margin: 2%;"><%= item.title.split(" - ")[1] %></span>
+        <span style="font-size: 16px;"><%= item.title.split(" - ")[1] %></span>
       </div>
       <div class="card-info">
         <span><%= item.title.split(" - ")[0] %></span>
@@ -21,10 +21,11 @@
   <% else %>
     <%= link_to order_path(order), :action => 'go' do %>
       <div class="<%= order_class %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path item_var.photo %>')">
-        <span style="font-size: 16px; margin: 2%;"><%= order.item.title.split(" - ")[1] %></span>
+        <span style="font-size: 16px;"><%= order.item.title.split(" - ")[1] %></span>
       </div>
       <div class="card-info">
         <span><%= order.item.title.split(" - ")[0] %></span>
+        <span style="font-size: 12px;"><%= order.start_time.to_s(:rfc822)[6..16] %> - <%= order.end_time.to_s(:rfc822)[6..16] %></span>
       </div>
     <% end %>
   <% end %>

@@ -425,13 +425,12 @@ item31.remote_photo_url = url
 item31.save
 item31_id = item31.id
 
-
-url = "https://i.ebayimg.com/images/g/5IwAAOSw2QxcdVqJ/s-l1600.jpg"
-item32 = Item.create!(title: '4 Burner Barbeque - Borrow',
-                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
-                     user: ben,
-                     price: 50,
-                     category: garden,
+url = "https://i.ebayimg.com/images/g/w3oAAOSwnjZcUbLS/s-l1600.jpg"
+item32 = Item.create!(title: '8-berth tent - Borrow',
+                     description: 'Extremely spacious 8-berth tent for larger groups. The tent has a peak height of over 200 cm.',
+                     user: ali,
+                     price: 35,
+                     category: travel,
                       )
 item32.remote_photo_url = url
 item32.save
@@ -458,6 +457,40 @@ item34 = Item.create!(title: 'Mini Barbeque - Borrow',
 item34.remote_photo_url = url
 item34.save
 item34_id = item34.id
+
+url = "https://i.ebayimg.com/images/g/5IwAAOSw2QxcdVqJ/s-l1600.jpg"
+item35 = Item.create!(title: '4 Burner Barbeque - Borrow',
+                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
+                     user: ben,
+                     price: 50,
+                     category: garden,
+                      )
+item35.remote_photo_url = url
+item35.save
+item35_id = item35.id
+
+url = "https://i.ebayimg.com/images/g/OPwAAOSw3utY732e/s-l1600.jpg"
+item36 = Item.create!(title: '5 Person Tent - Borrow',
+                     description: 'There is plenty of space for 5 persons. Taller persons also don´t need to fear because the peak height of is up to 220 cm.',
+                     user: jof,
+                     price: 30,
+                     category: travel,
+                      )
+item36.remote_photo_url = url
+item36.save
+item36_id = item36.id
+
+url = "https://i.ebayimg.com/images/g/NN8AAOSwMv9c8RKI/s-l1600.jpg"
+item37 = Item.create!(title: 'Family tent - Borrow',
+                     description: 'Very spacious 6 person tent and very comfortable. In good condition.',
+                     user: sam,
+                     price: 40,
+                     category: travel,
+                      )
+item37.remote_photo_url = url
+item37.save
+item37_id = item37.id
+
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',

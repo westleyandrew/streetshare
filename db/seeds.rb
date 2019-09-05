@@ -235,7 +235,7 @@ item12.save
 item12_id = item12.id
 
 
-url = "https://images-na.ssl-images-amazon.com/images/I/91nhdXZB8FL._UY741_.jpg"
+url = "https://pixl.varagesale.com/http://s3.amazonaws.com/hopshop-image-store-production/147023998/5a2bd6b2e88f259663418ddfe17abd0d.jpg?_ver=large_uploader_thumbnail&w=640&h=640&fit=crop&s=5fa117770a63c5f41737e278b59cea9a"
 item13 = Item.create!(title: 'Old Levis - Free',
                      description: 'Levis Mens 501 s Original Fit Straight Jeans,Blue (Stonewash 0114)-W32/L34',
                      user: jof,

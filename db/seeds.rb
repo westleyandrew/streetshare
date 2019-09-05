@@ -25,7 +25,7 @@ sam = User.create!(email: "sam@gmail.com",
                    address: '19 Henryson Road, London, SE4 1HL',
                    password: "123456",
                    first_name: "Sam",
-                   last_name: "Semit",
+                   last_name: "Watson",
                    photo: "http://icons.iconarchive.com/icons/hopstarter/superhero-avatar/256/Avengers-Iron-Man-icon.png"
                    )
 
@@ -170,7 +170,7 @@ item6_id = item6.id
 url = "https://upload.wikimedia.org/wikipedia/commons/9/90/MTD_Lawn_Mower.jpg"
 item7 = Item.create!(title: 'Lawnmower - Borrow',
                      description: 'TFlymo Speedi-Mo 360C Petrol Lawn Mower, 1500 W, Cutting Width 36 cm. £50 deposit',
-                     user: wes,
+                     user: ben,
                      price: 50,
                      category: garden,
                       )
@@ -297,7 +297,7 @@ item18.remote_photo_url = url
 item18.save
 item18_id = item18.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/61CqP90HCxL._SL1380_.jpg"
+url = "http://myoutdoorslife.com/wp-content/uploads/2016/05/6-camp-coleman-stove-810x540.jpg"
 item19 = Item.create!(title: 'Camping Chef Stove - Borrow',
                      description: 'Its two high power burners allow you to cook food to perfection with ease while the third radiant burner underneath is ideal for toasting bread or bacon. Perfect for longer get aways and family cooking.',
                      user: ali,
@@ -308,7 +308,7 @@ item19.remote_photo_url = url
 item19.save
 item19_id = item19.id
 
-url = "https://images-na.ssl-images-amazon.com/images/I/61YtkJ3x4mL._SL1222_.jpg"
+url = "https://www.trail.recipes/wp-content/uploads/sites/18/2017/05/backpacking-kitchen-set.jpg"
 item20 = Item.create!(title: ' Camping Cookware Kit - Borrow',
                      description: 'Cooking pan & pot made of high quality FDA approved Non-Toxic anodized Aluminum,solid and durable. They can be heated up quickly and evenly to do the delicious food. So you can enjoy the scenery of the trip with families and friends!',
                      user: ali,
@@ -322,7 +322,7 @@ item20_id = item20.id
 url = "https://i.ebayimg.com/images/g/HUsAAOSwohVcNtp8/s-l1600.jpg"
 item21 = Item.create!(title: 'Garden Bench - Borrow',
                      description: '2-in-1 Patio Swing Chair 3 Seater Hammock Cushion Bed Tilt Canopy Garden Bench. Quickly and easily converts to a comfortable bed.',
-                     user: wes,
+                     user: ali,
                      price: 30,
                      category: garden,
                       )

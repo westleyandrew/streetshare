@@ -1,0 +1,31 @@
+.container-spacial {
+  height: 100%;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formh1{
+  font-family: $headers-font;
+  color: $dark-gray;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 32px;
+}
+
+// FORM
+
+.form-background{
+  background: #fff;
+  width: 420px;
+  border-radius: 10px;
+  padding: 32px;
+  // align-self: center;
+-webkit-box-shadow: 0px 15px 88px -37px rgba(0,0,0,0.17);
+-moz-box-shadow: 0px 15px 88px -37px rgba(0,0,0,0.17);
+box-shadow: 0px 15px 88px -37px rgba(0,0,0,0.17);
+    margin: 4% auto;
+}
+

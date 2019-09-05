@@ -27,7 +27,7 @@
         <span><%= order.item.title.split(" - ")[0] %></span>
         <span style="font-size: 12px;">
           <% if order.start_time != nil %>
-            <%= order.start_time.to_s(:rfc822)[6..16] %> - <%= order.end_time.to_s(:rfc822)[6..16] %>
+            <%= order.start_time.to_s(:rfc822)[5..15] %> - <%= order.end_time.to_s(:rfc822)[5..15] %>
           <% end %>
         </span>
       </div>

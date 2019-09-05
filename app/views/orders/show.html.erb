@@ -13,7 +13,7 @@
             <li>
               <p>
                 <% if @order.start_time != nil %>
-                  <strong>Dates requested: </strong> <%= @order.start_time.to_s(:rfc822)[6..16] %> - <%= @order.end_time.to_s(:rfc822)[6..16] %>
+                  <strong>Dates requested: </strong> <%= @order.start_time.to_s(:rfc822)[5..15] %> - <%= @order.end_time.to_s(:rfc822)[5..15] %>
                 <% else %>
                   <strong>Next steps: </strong>Once the item owner accepts the order please arrange a convenient collection time
                 <% end %>

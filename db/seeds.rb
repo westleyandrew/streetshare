@@ -425,12 +425,12 @@ item31.remote_photo_url = url
 item31.save
 item31_id = item31.id
 
-url = "https://i.ebayimg.com/images/g/w3oAAOSwnjZcUbLS/s-l1600.jpg"
-item32 = Item.create!(title: '8-berth tent - Borrow',
-                     description: 'Extremely spacious 8-berth tent for larger groups. The tent has a peak height of over 200 cm.',
-                     user: ali,
-                     price: 35,
-                     category: travel,
+url = "https://i.ebayimg.com/images/g/5IwAAOSw2QxcdVqJ/s-l1600.jpg"
+item32 = Item.create!(title: '4 Burner Barbeque - Borrow',
+                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
+                     user: ben,
+                     price: 50,
+                     category: garden,
                       )
 item32.remote_photo_url = url
 item32.save
@@ -458,12 +458,12 @@ item34.remote_photo_url = url
 item34.save
 item34_id = item34.id
 
-url = "https://i.ebayimg.com/images/g/5IwAAOSw2QxcdVqJ/s-l1600.jpg"
-item35 = Item.create!(title: '4 Burner Barbeque - Borrow',
-                     description: 'Barrel 4 Burner Gas Barbecue With Cover & Thermometer. In good condition.',
-                     user: ben,
-                     price: 50,
-                     category: garden,
+url = "https://i.ebayimg.com/images/g/w3oAAOSwnjZcUbLS/s-l1600.jpg"
+item35 = Item.create!(title: '8-berth tent - Borrow',
+                     description: 'Extremely spacious 8-berth tent for larger groups. The tent has a peak height of over 200 cm.',
+                     user: ali,
+                     price: 35,
+                     category: travel,
                       )
 item35.remote_photo_url = url
 item35.save

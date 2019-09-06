@@ -9,6 +9,7 @@
             <% user = User.find(@order.user_id) %>
             <li><p><strong>Request status:</strong> <%= @order.state %></p></li>
             <li><p><strong>Item:</strong> <%= item.title %></p></li>
+            <li><p><%= link_to 'View item', item_path(item), class: "btn grey-btn" %></p></li>
             <li><p><strong>Requested by:</strong> <%= user.first_name %> <%= user.last_name %> (<%= user.email %>)</p></li>
             <li>
               <p>

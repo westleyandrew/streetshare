@@ -47,7 +47,6 @@
           <% if order.state != "rejected" %>
             <div class="card">
               <%= render 'shared/card', order: order, user: order.item.user, item_var: order.item, order_div: true %>
-              <%= button_to "Cancel", order_path(order, order: {state: "rejected"}), method: :put, class: "btn btn-sm delete-btn item-btn" %>
             </div>
           <% end %>
         <% end %>

@@ -491,6 +491,16 @@ item37.remote_photo_url = url
 item37.save
 item37_id = item37.id
 
+url = "https://awe365.com/content/uploads/2018/04/Snugpak-tent-1024x826.jpg"
+item38 = Item.create!(title: 'Single person tent - Free',
+                     description: 'This tent is a bit muddy after a visit to Reading Festival but is in OK condition.',
+                     user: sam,
+                     category: travel,
+                      )
+item38.remote_photo_url = url
+item38.save
+item38_id = item38.id
+
 
 puts 'Creating reviews...'
 review1 = Review.create!(title: 'Great tent',

@@ -1,1 +1,6 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+StreetShare
+-----------
+
+Final two week rails project made by Wes, Daniel Ekrem and Matt. Part of Le Wagon bacth #287.
+
+More to come ...
